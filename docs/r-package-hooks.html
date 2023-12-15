@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JE - Hooks for loading R packages</title>
+    <link
+      rel="icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../josherrickson.github.io/style.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
+      lang="en-us"
+    />
+    <meta name="Author" content="Josh Errickson" />
+  </head>
+  <body>
+    <h1 id="hooks-for-loading-r-packages">Hooks for loading R packages</h1>
+    <p>
+      The <code>setHook</code> function can be used to add hooks when loading
+      (or unloading) R packages. For example, to update my
+      <a href="devtools-better-yesno.html">previous post</a> about replacing the
+      <code>yesno</code> function in <strong>devtools</strong> can be improved
+      by using hooks. The version in the original post loaded
+      <strong>devtools</strong> in every R session. By using hooks, the change
+      to <code>yesno</code> takes place anytime <strong>devtools</strong> is
+      loaded, but does not require <strong>devtools</strong> loaded in every R
+      session.
+    </p>
+    <pre
+      class="r"
+    ><code>setHook(packageEvent(&quot;devtools&quot;, &quot;onLoad&quot;), {
+  yesno &lt;- function(...) {
+    cat(paste0(..., collapse = &quot;&quot;))
+    utils::menu(c(&quot;Yes&quot;, &quot;No&quot;)) != 1
+  }
+  utils::assignInNamespace(&quot;yesno&quot;, yesno, &quot;devtools&quot;)
+  rm(yesno)
+})</code></pre>
+    <p>
+      To improve this, we can first make sure <strong>devtools</strong> is
+      actually installed on the system.
+    </p>
+    <pre
+      class="r"
+    ><code>pkg &lt;- utils::installed.packages()[, &quot;Package&quot;]
+
+# Better yesno function from devtools
+if (isTRUE(&quot;devtools&quot; %in% pkg)) {
+  setHook(packageEvent(&quot;devtools&quot;, &quot;onLoad&quot;), {
+    yesno &lt;- function(...) {
+      cat(paste0(..., collapse = &quot;&quot;))
+      utils::menu(c(&quot;Yes&quot;, &quot;No&quot;)) != 1
+    }
+    utils::assignInNamespace(&quot;yesno&quot;, yesno, &quot;devtools&quot;)
+    rm(yesno)
+  })
+}
+rm(pkg)</code></pre>
+    <p>
+      Make sure to <code>rm</code> the objects otherwise they’ll exist in the
+      environment when you start a fresh R session.
+    </p>
+    <a href="https://errickson.net">Home</a> |
+    <a href="https://errickson.net/blog">Back to blog</a>
+  </body>
+</html>

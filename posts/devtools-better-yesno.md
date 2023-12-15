@@ -1,6 +1,6 @@
 # A More Sane `yesno()` for devtools
 
-**Update**: There's a better approach in this [new post](R-package-hooks.html).
+**Update**: There's a better approach in this [new post](r-package-hooks.html).
 
 When working with [**devtools**](https://devtools.r-lib.org/), you'll often be
 asked a yes/no question and get the annoying prompt of three randomly ordered

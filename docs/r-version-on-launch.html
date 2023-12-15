@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JE - Displaying R Version on Launch</title>
+    <link
+      rel="icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../josherrickson.github.io/style.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
+      lang="en-us"
+    />
+    <meta name="Author" content="Josh Errickson" />
+  </head>
+  <body>
+    <h1 id="displaying-r-version-on-launch">Displaying R Version on Launch</h1>
+    <p>
+      I’ve started using <a href="https://github.com/r-lib/rig">rig</a> to
+      manage my R versions, since I need both current and development versions.
+      I wanted a way to keep track of which version of R was currently running.
+      I started with a simple <code>cat</code> call in my .Rprofile, but that
+      caused issues occasionally.
+    </p>
+    <p>Instead, the answer is to use <code>message()</code>. E.g.,</p>
+    <pre
+      class="r"
+    ><code>message(paste0(&quot;Version: &quot;, version$major, &quot;.&quot;,
+               version$minor, &quot; &quot;, version$status))</code></pre>
+    <p>
+      Note that this is <em>not</em> affected by the <code>--quiet</code> flag,
+      so <code>R --quiet</code> will suppress the long R startup message while
+      still displaying your custom message.
+    </p>
+    <p>
+      (I also played around with modifying the prompt but decided against it,
+      but if that’s your flavor, check
+      <a href="https://stackoverflow.com/a/1448823"
+        >this stackoverflow answer</a
+      >
+      for how to manipulate it.)
+    </p>
+    <a href="https://errickson.net">Home</a> |
+    <a href="https://errickson.net/blog">Back to blog</a>
+  </body>
+</html>

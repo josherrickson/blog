@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Eval vs Get</title>
+    <title>JE - Exclude files from git commands</title>
     <link
       rel="icon"
       href="https://errickson.net/favicon.ico"
@@ -27,18 +27,16 @@
     <meta name="Author" content="Josh Errickson" />
   </head>
   <body>
-    <h1 id="increase-all-text-size-in-ggplot">
-      Increase ALL Text Size in ggplot
+    <h1 id="exclude-files-from-git-commands">
+      Exclude files from git commands
     </h1>
-    <p>You can add</p>
-    <pre class="r"><code>+ theme(text = element_text(size=20))</code></pre>
     <p>
-      to a <code>ggplot</code> object to modify the size of ALL text elements.
+      To exclude files from git commands such as <code>git grep</code> or
+      <code>git diff</code>:
     </p>
-    <p>
-      (This is with <code>ggplot</code> 3.4.1 in case they change the API
-      again.)
-    </p>
+    <pre class="bash"><code>git grep foobar -- &#39;:!*.java&#39;
+git diff -- &#39;:!*.html&#39; &#39;:!abc.csv&#39;</code></pre>
+    <p>Works for whole folders as well.</p>
     <a href="https://errickson.net">Home</a> |
     <a href="https://errickson.net/blog">Back to blog</a>
   </body>

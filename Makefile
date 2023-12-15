@@ -16,7 +16,7 @@ docs/index.html: index.md header.html footer.html
 	rm header-tmp.html
 	npx prettier $@ -w
 
-docs/%.html: posts/%.md
+docs/%.html: posts/%.md header.html footer.html
 	mkdir -p docs
 	pandoc -o tmp.html $< --no-highlight
 	cp header.html header-tmp.html

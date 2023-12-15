@@ -1,4 +1,4 @@
-# R's sys.call vs match.call
+# R's `sys.call` vs `match.call`
 
 The `sys.call()` function returns the exact call to the function.
 

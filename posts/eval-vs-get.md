@@ -1,4 +1,4 @@
-# Eval vs Get
+# R's `eval` vs `get`
 
 I've been fighting damn scoping issues lately and finally sat down to figure out
 what works and when. Documenting some of them here

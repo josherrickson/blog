@@ -1,4 +1,4 @@
-# Expect_silent and Debugging
+# `expect_silent` and Debugging
 
 When using the [`testthat`](https://testthat.r-lib.org/) package, there is a
 function,

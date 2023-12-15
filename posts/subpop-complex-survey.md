@@ -13,4 +13,4 @@ However, in the following two scenarios, subsetting versus formal subpopulations
    subpopulations capture one (or several) entire strata.
 2. Every cluster has at least one member of the subpopulation.
 
-Source: https://notstatschat.rbind.io/2021/07/22/subsets-and-subpopulations-in-survey-inference/
+Source: <https://notstatschat.rbind.io/2021/07/22/subsets-and-subpopulations-in-survey-inference/>

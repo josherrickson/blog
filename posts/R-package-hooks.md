@@ -1,12 +1,11 @@
 # Hooks for loading R packages
 
 The `setHook` function can be used to add hooks when loading (or unloading) R
-packages. For example, to update my [previous post]({{< ref
-"devtools-better-yesno" >}}) about replacing the `yesno` function in
-**devtools** can be improved by using hooks. The version in the original post
-loaded **devtools** in every R session. By using hooks, the change to `yesno`
-takes place anytime **devtools** is loaded, but does not require **devtools**
-loaded in every R session.
+packages. For example, to update my [previous post](devtools-better-yesno.html)
+about replacing the `yesno` function in **devtools** can be improved by using
+hooks. The version in the original post loaded **devtools** in every R session.
+By using hooks, the change to `yesno` takes place anytime **devtools** is
+loaded, but does not require **devtools** loaded in every R session.
 
 
 ```r

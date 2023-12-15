@@ -10,4 +10,4 @@ To switch to the older functionality, run the following terminal command:
 defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 ```
 
-Source:  https://apple.stackexchange.com/a/111755
+Source: <https://apple.stackexchange.com/a/111755>

@@ -14,11 +14,11 @@ having the re-learn them again in the future.
 - [Making TextEdit start with a Blank Document](textedit_new_document.html) 06/01/23
 - [Move N= in Stata 18's `dtable`](stata18_dtable_move_samplesize.html) 05/31/23
 - [Category-wise comparisons in Stata 18's `dtable`](stata18_dtable_category_compare.html) 05/04/23
-- [R's sys.call vs match.call](syscall_vs_matchcall.html) 04/29/23
+- [R's `sys.call` vs `match.call`](syscall_vs_matchcall.html) 04/29/23
 - [R's `all.equal`, relative vs absolute](all.equal-scale-difference.html) 04/06/23
 - [Character-wise String Comparison in R](characterwise-string-comparison.html) 03/29/23
-- [Expect_silent and Debugging](expect_silent-and-debugging.html) 03/28/23
-- [Eval vs Get](eval-vs-get.html) 03/27/23
+- [`expect_silent` and Debugging](expect_silent-and-debugging.html) 03/28/23
+- [R's `eval` vs `get`](eval-vs-get.html) 03/27/23
 - [A More Sane `yesno()` for devtools](devtools-better-yesno.html) 03/22/23
 - [Disable Slidy Click Advance](disable-slidy-click-advance.html) 03/22/23
 - [Subsets and subpopulations in complex survey designs](subpop-complex-survey.html) 03/22/23

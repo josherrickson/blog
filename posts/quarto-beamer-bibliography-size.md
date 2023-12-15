@@ -10,7 +10,8 @@ can add a bibliography with something like
 :::
 ```
 
-https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation
+Source:
+<https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation>
 
 However, if producing slides via
 [Beamer](https://quarto.org/docs/presentations/beamer.html), the number of

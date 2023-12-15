@@ -12,7 +12,7 @@ A few other notes I've collected:
 &chi;<sup>2</sup>:
 
 - For over ~400 obs, &chi;<sup>2</sup> is less useful because it almost always
-  rejects. (Citation is the Mutht&eacuten article linked below under SRMR.)
+  rejects. (Citation is the Muth&eacute;n article linked below under SRMR.)
 - We want it to *fail* to reject, so that saturated model is NOT better.
 - A lot of people recommend ignoring this.
 
@@ -20,7 +20,7 @@ SRMR:
 
 - Measure of "approximate fit", as opposed to &chi;<sup>2</sup> which is "exact
   fit" (and unrealistic in large data situations).
-- Mutht&eacute;n (author of Mplus)
+- Muth&eacute;n (author of Mplus)
   [suggests](https://www.statmodel.com/download/SRMR2.pdf) the following steps:
   1. If &chi;<sup>2</sup> fails to reject, we have a good "exact fit" and
    there's no need to use SRMR to examine approximate fit.
@@ -34,7 +34,7 @@ TLI/CLI:
 - TLI can be outside 0/1, but usually truncated. CLI always in [0,1].
 - Only useful in large sample sizes or  large DF
 - Minimum DF is 2
-- Muthe&eacute;n discusses it
+- Muth&eacute;n discusses it
   [here](https://www.statmodel.com/download/TLI.pdf).
 
 [^1]: Hoyle, Rick H., ed. Handbook of structural equation modeling. Guilford

@@ -4,6 +4,8 @@ This blog functions as an external brain, where I plan to leave notes (primarly
 to myself) of different software or statistical tricks/guides to hopefully avoid
 having the re-learn them again in the future.
 
+[RSS](rss.xml)
+
 - [Summary of SEM Model Fit Statistics](sem-model-fit-statistics.html) 12/15/23
 - [Rebasing a fork on git](git-rebase-from-fork.html) 12/09/23
 - [Displaying R Version on Launch](r-version-on-launch.html) 11/26/23

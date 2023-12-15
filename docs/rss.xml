@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+    <title>errickson.net Updates</title>
+    <link>http://errickson.net/blog</link>
+    <description>Statistical and Programming notes</description>
+    <language>en-us</language>
+    <atom:link href="http://errickson.net/blog/posts/rss.xml" rel="self" type="application/rss+xml" />
+
+    <!-- Items -->
+    <item>
+      <title>Summary of SEM Model Fit Statistics</title>
+      <link>http://errickson.net/blog/posts/sem-model-fit-statistics/sem-model-fit-statistics.html</link>
+      <pubDate>Fri, 15 Dec 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Rebasing a fork on git</title>
+      <link>http://errickson.net/blog/posts/git-rebase-from-fork/git-rebase-from-fork.html</link>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Displaying R Version on Launch</title>
+      <link>http://errickson.net/blog/posts/r-version-on-launch/r-version-on-launch.html</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Fixing colors in Emacs themes in tmux</title>
+      <link>http://errickson.net/blog/posts/emacs-tmux-themes/emacs-tmux-themes.html</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Hooks for loading R packages</title>
+      <link>http://errickson.net/blog/posts/r-package-hooks/r-package-hooks.html</link>
+      <pubDate>Fri, 13 Oct 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Stopping `fill-paragraph` from breaking Stata inline dynamics tags</title>
+      <link>http://errickson.net/blog/posts/emacs-fill-paragraph-stata-dynamic-tags/emacs-fill-paragraph-stata-dynamic-tags.html</link>
+      <pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Making a bibliography fit on one page in Beamer through Quarto</title>
+      <link>http://errickson.net/blog/posts/quarto-beamer-bibliography-size/quarto-beamer-bibliography-size.html</link>
+      <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Making TextEdit start with a Blank Document</title>
+      <link>http://errickson.net/blog/posts/textedit_new_document/textedit_new_document.html</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Move N= in Stata 18's `dtable`</title>
+      <link>http://errickson.net/blog/posts/stata18_dtable_move_samplesize/stata18_dtable_move_samplesize.html</link>
+      <pubDate>Wed, 31 May 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Category-wise comparisons in Stata 18's `dtable`</title>
+      <link>http://errickson.net/blog/posts/stata18_dtable_category_compare/stata18_dtable_category_compare.html</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>R's `sys.call` vs `match.call`</title>
+      <link>http://errickson.net/blog/posts/syscall_vs_matchcall/syscall_vs_matchcall.html</link>
+      <pubDate>Sat, 29 Apr 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>R's `all.equal`, relative vs absolute</title>
+      <link>http://errickson.net/blog/posts/all.equal-scale-difference/all.equal-scale-difference.html</link>
+      <pubDate>Thu, 06 Apr 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Character-wise String Comparison in R</title>
+      <link>http://errickson.net/blog/posts/characterwise-string-comparison/characterwise-string-comparison.html</link>
+      <pubDate>Wed, 29 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>`expect_silent` and Debugging</title>
+      <link>http://errickson.net/blog/posts/expect_silent-and-debugging/expect_silent-and-debugging.html</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>R's `eval` vs `get`</title>
+      <link>http://errickson.net/blog/posts/eval-vs-get/eval-vs-get.html</link>
+      <pubDate>Mon, 27 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>A More Sane `yesno()` for devtools</title>
+      <link>http://errickson.net/blog/posts/devtools-better-yesno/devtools-better-yesno.html</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Disable Slidy Click Advance</title>
+      <link>http://errickson.net/blog/posts/disable-slidy-click-advance/disable-slidy-click-advance.html</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Subsets and subpopulations in complex survey designs</title>
+      <link>http://errickson.net/blog/posts/subpop-complex-survey/subpop-complex-survey.html</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>How to Scroll in Tmux</title>
+      <link>http://errickson.net/blog/posts/scrolling-in-tmux/scrolling-in-tmux.html</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>The Rule of Three</title>
+      <link>http://errickson.net/blog/posts/the-rule-of-three/the-rule-of-three.html</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Exclude files from git commands</title>
+      <link>http://errickson.net/blog/posts/git-exclude-files/git-exclude-files.html</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Color by Significance in R's `forestplot`</title>
+      <link>http://errickson.net/blog/posts/forestplot-color-by-significance/forestplot-color-by-significance.html</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Increase ALL Text Size in ggplot</title>
+      <link>http://errickson.net/blog/posts/ggplot-increase-all-text-size/ggplot-increase-all-text-size.html</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Ignore whitespace on Git diffs</title>
+      <link>http://errickson.net/blog/posts/git_ignore_whitespace/git_ignore_whitespace.html</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+  </channel>
+</rss>

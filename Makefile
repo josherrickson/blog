@@ -2,9 +2,9 @@ MD_FILES := $(wildcard posts/*.md)
 TMP=$(MD_FILES:.md=.html)
 HTML_FILES=$(subst posts,docs,$(TMP))
 
-.PHONY: all move-images
+.PHONY: all move-files open
 
-all: docs/index.html $(HTML_FILES) move-images
+all: docs/index.html $(HTML_FILES) move-files
 
 docs/index.html: index.md header.html footer.html
 	pandoc -o tmp.html index.md
@@ -25,6 +25,10 @@ docs/%.html: posts/%.md
 	npx prettier $@ -w
 
 
-move-images:
+move-files:
 	rm -rf docs/images
 	cp -r images docs/images
+	cp rss.xml docs/
+
+open:
+	open docs/index.html

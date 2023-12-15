@@ -1,50 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>R's `sys.call` vs `match.call`</title>
-    <link
-      rel="icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://errickson.net/style.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="keywords"
-      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
-      lang="en-us"
-    />
-    <meta name="Author" content="Josh Errickson" />
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-    <h1 id="rs-sys.call-vs-match.call">
-      R’s <code>sys.call</code> vs <code>match.call</code>
-    </h1>
-    <p>
-      The <code>sys.call()</code> function returns the exact call to the
-      function.
-    </p>
-    <p>
-      The <code>match.call()</code> function names all arguments and orders them
-      as appropriate.
-    </p>
-    <pre class="r"><code>f &lt;- function(x, y = 2) {
+<h1 id="rs-sys.call-vs-match.call">
+  R’s <code>sys.call</code> vs <code>match.call</code>
+</h1>
+<p>
+  The <code>sys.call()</code> function returns the exact call to the function.
+</p>
+<p>
+  The <code>match.call()</code> function names all arguments and orders them as
+  appropriate.
+</p>
+<pre class="r"><code>f &lt;- function(x, y = 2) {
   print(paste(&quot;sys.call():&quot;, deparse(sys.call())))
   print(paste(&quot;match.call():&quot;, deparse(match.call())))
   invisible(TRUE)
 }</code></pre>
-    <p>This results in:</p>
-    <pre class="r"><code>&gt; f(1, 2)
+<p>This results in:</p>
+<pre class="r"><code>&gt; f(1, 2)
 [1] &quot;sys.call(): f(1, 2)&quot;
 [1] &quot;match.call(): f(x = 1, y = 2)&quot;
 &gt; f(y = 2, x = 1)
@@ -53,7 +36,7 @@
 &gt; f(6)
 [1] &quot;sys.call(): f(6)&quot;
 [1] &quot;match.call(): f(x = 6)&quot;</code></pre>
-    <p>Note the last example does not include a <code>y = 2</code> argument.</p>
+<p>Note the last example does not include a <code>y = 2</code> argument.</p>
     <a href="https://errickson.net">Home</a> |
     <a href="https://errickson.net/blog">Back to blog</a>
   </body>

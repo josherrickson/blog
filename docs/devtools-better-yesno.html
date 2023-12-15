@@ -1,53 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>A More Sane `yesno()` for devtools</title>
-    <link
-      rel="icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://errickson.net/style.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="keywords"
-      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
-      lang="en-us"
-    />
-    <meta name="Author" content="Josh Errickson" />
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-    <h1 id="a-more-sane-yesno-for-devtools">
-      A More Sane <code>yesno()</code> for devtools
-    </h1>
-    <p>
-      <strong>Update</strong>: There’s a better approach in this
-      <a href="r-package-hooks.html">new post</a>.
-    </p>
-    <p>
-      When working with
-      <a href="https://devtools.r-lib.org/"><strong>devtools</strong></a
-      >, you’ll often be asked a yes/no question and get the annoying prompt of
-      three randomly ordered and randomly worded variations of “Yes” and “No”,
-      so that you have to think hard to pick the right one. I get what they’re
-      trying to do (force you to actually think about the question rather than
-      hitting “Y” repeatedly) but I find it very annoying. Here’s a fix.
-    </p>
-    <p>
-      Add this code to your .Rprofile, and you’ll now get a static 1: Yes, 2: No
-      prompt.
-    </p>
-    <pre class="r"><code>suppressMessages(require(devtools))
+<h1 id="a-more-sane-yesno-for-devtools">
+  A More Sane <code>yesno()</code> for devtools
+</h1>
+<p>
+  <strong>Update</strong>: There’s a better approach in this
+  <a href="r-package-hooks.html">new post</a>.
+</p>
+<p>
+  When working with
+  <a href="https://devtools.r-lib.org/"><strong>devtools</strong></a
+  >, you’ll often be asked a yes/no question and get the annoying prompt of
+  three randomly ordered and randomly worded variations of “Yes” and “No”, so
+  that you have to think hard to pick the right one. I get what they’re trying
+  to do (force you to actually think about the question rather than hitting “Y”
+  repeatedly) but I find it very annoying. Here’s a fix.
+</p>
+<p>
+  Add this code to your .Rprofile, and you’ll now get a static 1: Yes, 2: No
+  prompt.
+</p>
+<pre class="r"><code>suppressMessages(require(devtools))
 yesno &lt;- function(...) {
   cat(paste0(..., collapse = &quot;&quot;))
   # For whatever reason, devtools:::yesno returns `TRUE` if you

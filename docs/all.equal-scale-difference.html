@@ -1,73 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>R's `all.equal`, relative vs absolute</title>
-    <link
-      rel="icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://errickson.net/style.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="keywords"
-      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
-      lang="en-us"
-    />
-    <meta name="Author" content="Josh Errickson" />
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-    <h1 id="rs-all.equal-relative-vs-absolute">
-      R’s <code>all.equal</code>, relative vs absolute
-    </h1>
-    <p>
-      The
-      <a
-        href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/all.equal"
-        ><code>all.equal()</code></a
-      >
-      function is useful to comparing whether two numeric objects are
-      equivalent, but it has a weird quirk.
-    </p>
-    <pre class="r"><code>&gt; all.equal(4, 5)
+<h1 id="rs-all.equal-relative-vs-absolute">
+  R’s <code>all.equal</code>, relative vs absolute
+</h1>
+<p>
+  The
+  <a
+    href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/all.equal"
+    ><code>all.equal()</code></a
+  >
+  function is useful to comparing whether two numeric objects are equivalent,
+  but it has a weird quirk.
+</p>
+<pre class="r"><code>&gt; all.equal(4, 5)
 [1] &quot;Mean relative difference: 0.25&quot;</code></pre>
-    <p>
-      You might expect that the difference should be 1. But note the “relative
-      difference.” The default for <code>all.equal</code> is to report the
-      difference for a call of <code>all.equal(x, y)</code> as |x - y|/x. This
-      also means that <code>all.equal(x, y)</code> is not going to report the
-      same difference as <code>all.equal(y, x)</code>.
-    </p>
-    <p>
-      The <code>scale=</code> argument makes <code>all.equal</code> instead
-      report absolute difference:
-    </p>
-    <pre class="r"><code>&gt; all.equal(4, 5, scale = 1)
+<p>
+  You might expect that the difference should be 1. But note the “relative
+  difference.” The default for <code>all.equal</code> is to report the
+  difference for a call of <code>all.equal(x, y)</code> as |x - y|/x. This also
+  means that <code>all.equal(x, y)</code> is not going to report the same
+  difference as <code>all.equal(y, x)</code>.
+</p>
+<p>
+  The <code>scale=</code> argument makes <code>all.equal</code> instead report
+  absolute difference:
+</p>
+<pre class="r"><code>&gt; all.equal(4, 5, scale = 1)
 [1] &quot;Mean absolute difference: 1&quot;</code></pre>
-    <p>
-      This comes in especially with the <code>tolerance=</code> argument. Let’s
-      say you want to consider two values “equal” if they’re less than .5 apart.
-    </p>
-    <pre class="r"><code>&gt; all.equal(4, 4.4, tolerance = .5)
+<p>
+  This comes in especially with the <code>tolerance=</code> argument. Let’s say
+  you want to consider two values “equal” if they’re less than .5 apart.
+</p>
+<pre class="r"><code>&gt; all.equal(4, 4.4, tolerance = .5)
 [1] TRUE
 &gt; all.equal(4, 5, tolerance = .5)
 [1] TRUE</code></pre>
-    <p>
-      That second one is clearly wrong. However, if we set the
-      <code>scale=</code> argument to 1, the tolerance is applied on the
-      absolute scale instead.
-    </p>
-    <pre class="r"><code>&gt; all.equal(4, 5, tolerance = .5, scale = 1)
+<p>
+  That second one is clearly wrong. However, if we set the
+  <code>scale=</code> argument to 1, the tolerance is applied on the absolute
+  scale instead.
+</p>
+<pre class="r"><code>&gt; all.equal(4, 5, tolerance = .5, scale = 1)
 [1] &quot;Mean absolute difference: 1&quot;</code></pre>
     <a href="https://errickson.net">Home</a> |
     <a href="https://errickson.net/blog">Back to blog</a>

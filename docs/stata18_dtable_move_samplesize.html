@@ -1,43 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Move N= in Stata 18's `dtable`</title>
-    <link
-      rel="icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://errickson.net/style.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="keywords"
-      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
-      lang="en-us"
-    />
-    <meta name="Author" content="Josh Errickson" />
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-    <h1 id="move-n-in-stata-18s-dtable">
-      Move N= in Stata 18’s <code>dtable</code>
-    </h1>
-    <p>
-      By default, the
-      <a href="https://www.stata.com/manuals/rdtable.pdf"
-        ><code>dtable</code></a
-      >
-      command places the sample size in its own row:
-    </p>
-    <pre class="stata"><code>. sysuse auto, clear
+<h1 id="move-n-in-stata-18s-dtable">
+  Move N= in Stata 18’s <code>dtable</code>
+</h1>
+<p>
+  By default, the
+  <a href="https://www.stata.com/manuals/rdtable.pdf"><code>dtable</code></a>
+  command places the sample size in its own row:
+</p>
+<pre class="stata"><code>. sysuse auto, clear
 (1978 automobile data)
 
 . dtable mpg, by(foreign)
@@ -49,8 +31,8 @@
 N                 52 (70.3%)     22 (29.7%)    74 (100.0%)
 Mileage (mpg) 19.827 (4.743) 24.773 (6.611) 21.297 (5.786)
 ----------------------------------------------------------</code></pre>
-    <p>We can use the following two additional options to relocate it:</p>
-    <pre class="stata"><code>
+<p>We can use the following two additional options to relocate it:</p>
+<pre class="stata"><code>
 . dtable mpg, by(foreign) ///
 &gt;             sample(, statistics(freq) place(seplabels)) ///
 &gt;             sformat(&quot;(N=%s)&quot; frequency)
@@ -62,23 +44,23 @@ Mileage (mpg) 19.827 (4.743) 24.773 (6.611) 21.297 (5.786)
 ----------------------------------------------------------
 Mileage (mpg) 19.827 (4.743) 24.773 (6.611) 21.297 (5.786)
 ----------------------------------------------------------</code></pre>
-    <p>
-      The <code>sample()</code> option chooses which sample-level
-      characteristics to report with <code>statistics(freq)</code>, and the
-      <code>place()</code> suboption choses their location:
-    </p>
-    <ul>
-      <li><code>place(items)</code> is the default.</li>
-      <li>
-        <code>place(inlabels)</code> places it in the column headers (e.g. we’d
-        see “Domestic (N=52)”).
-      </li>
-      <li><code>place(seplabels)</code> places it below the column headers.</li>
-    </ul>
-    <p>
-      The <code>sformat()</code> option formats a particular type of reported
-      results (in this case, “<code>frequency</code>”) with a given string.
-    </p>
+<p>
+  The <code>sample()</code> option chooses which sample-level characteristics to
+  report with <code>statistics(freq)</code>, and the
+  <code>place()</code> suboption choses their location:
+</p>
+<ul>
+  <li><code>place(items)</code> is the default.</li>
+  <li>
+    <code>place(inlabels)</code> places it in the column headers (e.g. we’d see
+    “Domestic (N=52)”).
+  </li>
+  <li><code>place(seplabels)</code> places it below the column headers.</li>
+</ul>
+<p>
+  The <code>sformat()</code> option formats a particular type of reported
+  results (in this case, “<code>frequency</code>”) with a given string.
+</p>
     <a href="https://errickson.net">Home</a> |
     <a href="https://errickson.net/blog">Back to blog</a>
   </body>

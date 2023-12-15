@@ -1,50 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Color by Significance in R's `forestplot`</title>
-    <link
-      rel="icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://errickson.net/style.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="keywords"
-      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
-      lang="en-us"
-    />
-    <meta name="Author" content="Josh Errickson" />
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-    <h1 id="color-by-significance-in-rs-forestplot">
-      Color by Significance in R’s <code>forestplot</code>
-    </h1>
-    <p>
-      The
-      <a
-        href="https://cran.r-project.org/web/packages/forestplot/vignettes/forestplot.html"
-        >forestplot</a
-      >
-      package doesn’t easily support advanced coloring of each point,
-      specifically to flag significance levels.
-    </p>
-    <p>
-      It does however supported custom coloring via a moderately complicated
-      custom function, so here’s an example of how to color by significance.
-    </p>
-    <p>First, create the following function:</p>
-    <pre class="r"><code>fn &lt;- local({
+<h1 id="color-by-significance-in-rs-forestplot">
+  Color by Significance in R’s <code>forestplot</code>
+</h1>
+<p>
+  The
+  <a
+    href="https://cran.r-project.org/web/packages/forestplot/vignettes/forestplot.html"
+    >forestplot</a
+  >
+  package doesn’t easily support advanced coloring of each point, specifically
+  to flag significance levels.
+</p>
+<p>
+  It does however supported custom coloring via a moderately complicated custom
+  function, so here’s an example of how to color by significance.
+</p>
+<p>First, create the following function:</p>
+<pre class="r"><code>fn &lt;- local({
   i &lt;- 0
   clrs &lt;- ifelse(dat$pv &lt; .05, &quot;darkgreen&quot;,
                  -ifelse(dat$pv &lt; .1, &quot;blue&quot;, &quot;darkgrey&quot;))
@@ -56,26 +40,26 @@
                    clr.marker = clrs[i])
   }
 })</code></pre>
-    <p>
-      Inside <code>local()</code> so that <code>i</code> isn’t manipulated
-      elsewhere.
-    </p>
-    <p>
-      The <code>clrs</code> object defined in lines 3-4 returns a specific color
-      based upon the p-value, here stored in <code>dat$pv</code>. For context,
-      “darkgreen” is used for p-values below .05, “blue” for p-values below .10
-      (but above .05), and “darkgrey” for p-values above .10.
-    </p>
-    <p>
-      If you want different colors for the points and the lines, define two
-      different vectors similar to <code>clrs</code>, and change lines 9-10 to
-      point to the differing vectors.
-    </p>
-    <p>
-      Following the creation of <code>fn</code>, you can add it to your
-      <code>forestplot()</code> via:
-    </p>
-    <pre class="r"><code>  forestplot(...,
+<p>
+  Inside <code>local()</code> so that <code>i</code> isn’t manipulated
+  elsewhere.
+</p>
+<p>
+  The <code>clrs</code> object defined in lines 3-4 returns a specific color
+  based upon the p-value, here stored in <code>dat$pv</code>. For context,
+  “darkgreen” is used for p-values below .05, “blue” for p-values below .10 (but
+  above .05), and “darkgrey” for p-values above .10.
+</p>
+<p>
+  If you want different colors for the points and the lines, define two
+  different vectors similar to <code>clrs</code>, and change lines 9-10 to point
+  to the differing vectors.
+</p>
+<p>
+  Following the creation of <code>fn</code>, you can add it to your
+  <code>forestplot()</code> via:
+</p>
+<pre class="r"><code>  forestplot(...,
              fn.ci_norm = fn,
              ...)</code></pre>
     <a href="https://errickson.net">Home</a> |

@@ -1,80 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>
-      Making a bibliography fit on one page in Beamer through Quarto
-    </title>
-    <link
-      rel="icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://errickson.net/style.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="keywords"
-      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
-      lang="en-us"
-    />
-    <meta name="Author" content="Josh Errickson" />
+    <meta charset="UTF-8">
+    <title>Making a bibliography fit on one page in Beamer through Quarto</title>
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-    <h1 id="making-a-bibliography-fit-on-one-page-in-beamer-through-quarto">
-      Making a bibliography fit on one page in Beamer through Quarto
-    </h1>
-    <p>
-      When using
-      <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto</a
-      >, you can add a bibliography with something like
-    </p>
-    <pre><code>### References
+<h1 id="making-a-bibliography-fit-on-one-page-in-beamer-through-quarto">
+  Making a bibliography fit on one page in Beamer through Quarto
+</h1>
+<p>
+  When using
+  <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto</a>,
+  you can add a bibliography with something like
+</p>
+<pre><code>### References
 
 ::: {#refs}
 :::</code></pre>
-    <p>
-      Source:
-      <a
-        href="https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation"
-        class="uri"
-        >https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation</a
-      >
-    </p>
-    <p>
-      However, if producing slides via
-      <a href="https://quarto.org/docs/presentations/beamer.html">Beamer</a>,
-      the number of references can cause the text to run off the slide. You can
-      use the <code>shrink</code> option to automatically reduce the font size
-      to fit everything, or the <code>allowframebreaks</code> option to split
-      the bibliography onto multiple pages.
-    </p>
-    <pre><code>### References {shrink=5}
+<p>
+  Source:
+  <a
+    href="https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation"
+    class="uri"
+    >https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation</a
+  >
+</p>
+<p>
+  However, if producing slides via
+  <a href="https://quarto.org/docs/presentations/beamer.html">Beamer</a>, the
+  number of references can cause the text to run off the slide. You can use the
+  <code>shrink</code> option to automatically reduce the font size to fit
+  everything, or the <code>allowframebreaks</code> option to split the
+  bibliography onto multiple pages.
+</p>
+<pre><code>### References {shrink=5}
 
 ::: {#refs}
 :::</code></pre>
-    <p>
-      The numeric argument of <code>shrink</code> is the minimum shrink size -
-      making it too high can yield strange results, so start with it small and
-      increase if necessary.
-    </p>
-    <pre><code>### References {allowframebreaks=.9}
+<p>
+  The numeric argument of <code>shrink</code> is the minimum shrink size -
+  making it too high can yield strange results, so start with it small and
+  increase if necessary.
+</p>
+<pre><code>### References {allowframebreaks=.9}
 
 ::: {#refs}
 :::</code></pre>
-    <p>
-      The numeric argument of <code>allowframebreaks</code> controls how much of
-      a given frame is allow to be filled. E.g. a value of “1” would use every
-      inch of the slide - very cluttered.
-    </p>
+<p>
+  The numeric argument of <code>allowframebreaks</code> controls how much of a
+  given frame is allow to be filled. E.g. a value of “1” would use every inch of
+  the slide - very cluttered.
+</p>
     <a href="https://errickson.net">Home</a> |
     <a href="https://errickson.net/blog">Back to blog</a>
   </body>

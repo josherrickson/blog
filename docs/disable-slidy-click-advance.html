@@ -1,63 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Disable Slidy Click Advance</title>
-    <link
-      rel="icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://errickson.net/style.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="keywords"
-      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
-      lang="en-us"
-    />
-    <meta name="Author" content="Josh Errickson" />
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-    <h1 id="disable-slidy-click-advance">Disable Slidy Click Advance</h1>
-    <p>
-      <a href="https://bookdown.org/yihui/rmarkdown/slidy-presentation.html"
-        >Slidy presentations</a
-      >
-      in R, by default, advance on mouse-click, which can be frustrating.
-    </p>
-    <p>
-      Once you have a Slidy presentation loaded, the “k” key will disable this.
-    </p>
-    <p>
-      We can disable it more generally by modifying the
-      <code>rmarkdown</code> package you have installed.
-    </p>
-    <ol type="1">
-      <li>Find your <code>rmarkdown</code> installation:</li>
-    </ol>
-    <pre
-      class="r"
-    ><code>system.file(package = &quot;rmarkdown&quot;)</code></pre>
-    <ol start="2" type="1">
-      <li>Navigate to that directory, then edit the file:</li>
-    </ol>
-    <pre><code>rmd/slidy/Slidy2/scripts/slidy.js</code></pre>
-    <ol start="3" type="1">
-      <li>
-        Find the line that defines <code>mouse_click_enabled</code> (in
-        <code>rmarkdown</code> version 2.20, this is line 55). Change the value
-        of <code>true</code> to <code>false</code>.
-      </li>
-    </ol>
+<h1 id="disable-slidy-click-advance">Disable Slidy Click Advance</h1>
+<p>
+  <a href="https://bookdown.org/yihui/rmarkdown/slidy-presentation.html"
+    >Slidy presentations</a
+  >
+  in R, by default, advance on mouse-click, which can be frustrating.
+</p>
+<p>Once you have a Slidy presentation loaded, the “k” key will disable this.</p>
+<p>
+  We can disable it more generally by modifying the
+  <code>rmarkdown</code> package you have installed.
+</p>
+<ol type="1">
+  <li>Find your <code>rmarkdown</code> installation:</li>
+</ol>
+<pre class="r"><code>system.file(package = &quot;rmarkdown&quot;)</code></pre>
+<ol start="2" type="1">
+  <li>Navigate to that directory, then edit the file:</li>
+</ol>
+<pre><code>rmd/slidy/Slidy2/scripts/slidy.js</code></pre>
+<ol start="3" type="1">
+  <li>
+    Find the line that defines <code>mouse_click_enabled</code> (in
+    <code>rmarkdown</code> version 2.20, this is line 55). Change the value of
+    <code>true</code> to <code>false</code>.
+  </li>
+</ol>
     <a href="https://errickson.net">Home</a> |
     <a href="https://errickson.net/blog">Back to blog</a>
   </body>

@@ -1,140 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Summary of SEM Model Fit Statistics</title>
-    <link
-      rel="icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://errickson.net/style.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="keywords"
-      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
-      lang="en-us"
-    />
-    <meta name="Author" content="Josh Errickson" />
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-    <h1 id="summary-of-sem-model-fit-statistics">
-      Summary of SEM Model Fit Statistics
-    </h1>
-    <p>
-      I can never keep track of the various model fit statistics. Thankfully,
-      the book
-      <a
-        href="https://www.guilford.com/books/Handbook-of-Structural-Equation-Modeling/Rick-Hoyle/9781462544646"
-        >Handbook of Structural Equation Modeling</a
-      ><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"
-        ><sup>1</sup></a
-      >
-      includes a chapter by West et al<a
-        href="#fn2"
-        class="footnote-ref"
-        id="fnref2"
-        role="doc-noteref"
-        ><sup>2</sup></a
-      >
-      including this handy chart:
-    </p>
-    <p>
-      <a href="images/west_et_al_fit_statistics.png"
-        ><img src="images/west_et_al_fit_statistics.png" width="600px"
-      /></a>
-    </p>
-    <p>A few other notes I’ve collected:</p>
-    <p>χ<sup>2</sup>:</p>
-    <ul>
+<h1 id="summary-of-sem-model-fit-statistics">
+  Summary of SEM Model Fit Statistics
+</h1>
+<p>
+  I can never keep track of the various model fit statistics. Thankfully, the
+  book
+  <a
+    href="https://www.guilford.com/books/Handbook-of-Structural-Equation-Modeling/Rick-Hoyle/9781462544646"
+    >Handbook of Structural Equation Modeling</a
+  ><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"
+    ><sup>1</sup></a
+  >
+  includes a chapter by West et al<a
+    href="#fn2"
+    class="footnote-ref"
+    id="fnref2"
+    role="doc-noteref"
+    ><sup>2</sup></a
+  >
+  including this handy chart:
+</p>
+<p>
+  <a href="images/west_et_al_fit_statistics.png"
+    ><img src="images/west_et_al_fit_statistics.png" width="600px"
+  /></a>
+</p>
+<p>A few other notes I’ve collected:</p>
+<p>χ<sup>2</sup>:</p>
+<ul>
+  <li>
+    For over ~400 obs, χ<sup>2</sup> is less useful because it almost always
+    rejects. (Citation is the Muthén article linked below under SRMR.)
+  </li>
+  <li>
+    We want it to <em>fail</em> to reject, so that saturated model is NOT
+    better.
+  </li>
+  <li>A lot of people recommend ignoring this.</li>
+</ul>
+<p>SRMR:</p>
+<ul>
+  <li>
+    Measure of “approximate fit”, as opposed to χ<sup>2</sup> which is “exact
+    fit” (and unrealistic in large data situations).
+  </li>
+  <li>
+    Muthén (author of Mplus)
+    <a href="https://www.statmodel.com/download/SRMR2.pdf">suggests</a> the
+    following steps:
+    <ol type="1">
       <li>
-        For over ~400 obs, χ<sup>2</sup> is less useful because it almost always
-        rejects. (Citation is the Muthén article linked below under SRMR.)
+        If χ<sup>2</sup> fails to reject, we have a good “exact fit” and there’s
+        no need to use SRMR to examine approximate fit.
       </li>
       <li>
-        We want it to <em>fail</em> to reject, so that saturated model is NOT
-        better.
+        If χ<sup>2</sup> rejects, and SRMR is &lt; .08, and there’s no large
+        residuals, model is approximately fit. (With larger samples, n &gt; 200)
       </li>
-      <li>A lot of people recommend ignoring this.</li>
-    </ul>
-    <p>SRMR:</p>
-    <ul>
-      <li>
-        Measure of “approximate fit”, as opposed to χ<sup>2</sup> which is
-        “exact fit” (and unrealistic in large data situations).
-      </li>
-      <li>
-        Muthén (author of Mplus)
-        <a href="https://www.statmodel.com/download/SRMR2.pdf">suggests</a> the
-        following steps:
-        <ol type="1">
-          <li>
-            If χ<sup>2</sup> fails to reject, we have a good “exact fit” and
-            there’s no need to use SRMR to examine approximate fit.
-          </li>
-          <li>
-            If χ<sup>2</sup> rejects, and SRMR is &lt; .08, and there’s no large
-            residuals, model is approximately fit. (With larger samples, n &gt;
-            200)
-          </li>
-          <li>χ<sup>2</sup> rejects, SRMR &gt; .08, poorly fitting model</li>
-        </ol>
-      </li>
-    </ul>
-    <p>TLI/CLI:</p>
-    <ul>
-      <li>Functions of χ<sup>2</sup>/df ratio</li>
-      <li>
-        TLI can be outside 0/1, but usually truncated. CLI always in [0,1].
-      </li>
-      <li>Only useful in large sample sizes or large DF</li>
-      <li>Minimum DF is 2</li>
-      <li>
-        Muthén discusses it
-        <a href="https://www.statmodel.com/download/TLI.pdf">here</a>.
-      </li>
-    </ul>
-    <section
-      id="footnotes"
-      class="footnotes footnotes-end-of-document"
-      role="doc-endnotes"
-    >
-      <hr />
-      <ol>
-        <li id="fn1">
-          <p>
-            Hoyle, Rick H., ed. Handbook of structural equation modeling.
-            Guilford press, 2012.<a
-              href="#fnref1"
-              class="footnote-back"
-              role="doc-backlink"
-              >↩︎</a
-            >
-          </p>
-        </li>
-        <li id="fn2">
-          <p>
-            West, Stephen G., Aaron B. Taylor, and Wei Wu. “Model fit and model
-            selection in structural equation modeling.” Handbook of structural
-            equation modeling (2012): 209-231.<a
-              href="#fnref2"
-              class="footnote-back"
-              role="doc-backlink"
-              >↩︎</a
-            >
-          </p>
-        </li>
-      </ol>
-    </section>
+      <li>χ<sup>2</sup> rejects, SRMR &gt; .08, poorly fitting model</li>
+    </ol>
+  </li>
+</ul>
+<p>TLI/CLI:</p>
+<ul>
+  <li>Functions of χ<sup>2</sup>/df ratio</li>
+  <li>TLI can be outside 0/1, but usually truncated. CLI always in [0,1].</li>
+  <li>Only useful in large sample sizes or large DF</li>
+  <li>Minimum DF is 2</li>
+  <li>
+    Muthén discusses it
+    <a href="https://www.statmodel.com/download/TLI.pdf">here</a>.
+  </li>
+</ul>
+<section
+  id="footnotes"
+  class="footnotes footnotes-end-of-document"
+  role="doc-endnotes"
+>
+  <hr />
+  <ol>
+    <li id="fn1">
+      <p>
+        Hoyle, Rick H., ed. Handbook of structural equation modeling. Guilford
+        press, 2012.<a href="#fnref1" class="footnote-back" role="doc-backlink"
+          >↩︎</a
+        >
+      </p>
+    </li>
+    <li id="fn2">
+      <p>
+        West, Stephen G., Aaron B. Taylor, and Wei Wu. “Model fit and model
+        selection in structural equation modeling.” Handbook of structural
+        equation modeling (2012): 209-231.<a
+          href="#fnref2"
+          class="footnote-back"
+          role="doc-backlink"
+          >↩︎</a
+        >
+      </p>
+    </li>
+  </ol>
+</section>
     <a href="https://errickson.net">Home</a> |
     <a href="https://errickson.net/blog">Back to blog</a>
   </body>

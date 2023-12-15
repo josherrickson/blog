@@ -1,42 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Exclude files from git commands</title>
-    <link
-      rel="icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://errickson.net/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://errickson.net/style.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="keywords"
-      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
-      lang="en-us"
-    />
-    <meta name="Author" content="Josh Errickson" />
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-    <h1 id="exclude-files-from-git-commands">
-      Exclude files from git commands
-    </h1>
-    <p>
-      To exclude files from git commands such as <code>git grep</code> or
-      <code>git diff</code>:
-    </p>
-    <pre class="bash"><code>git grep foobar -- &#39;:!*.java&#39;
+<h1 id="exclude-files-from-git-commands">Exclude files from git commands</h1>
+<p>
+  To exclude files from git commands such as <code>git grep</code> or
+  <code>git diff</code>:
+</p>
+<pre class="bash"><code>git grep foobar -- &#39;:!*.java&#39;
 git diff -- &#39;:!*.html&#39; &#39;:!abc.csv&#39;</code></pre>
-    <p>Works for whole folders as well.</p>
+<p>Works for whole folders as well.</p>
     <a href="https://errickson.net">Home</a> |
     <a href="https://errickson.net/blog">Back to blog</a>
   </body>

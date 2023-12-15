@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eval vs Get</title>
+    <link
+      rel="icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../josherrickson.github.io/style.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
+      lang="en-us"
+    />
+    <meta name="Author" content="Josh Errickson" />
+  </head>
+  <body>
+    <h1 id="subsets-and-subpopulations-in-complex-survey-designs">
+      Subsets and subpopulations in complex survey designs
+    </h1>
+    <p>
+      Generally you should <strong>not</strong> just subset complex survey data
+      to do subpopulation analysis, instead using the built in tools,
+      e.g. Stata’s
+      <a href="https://www.stata.com/manuals/svysubpopulationestimation.pdf"
+        ><code>svy, subpop(z): ...</code></a
+      >
+      or R’s
+      <a
+        href="https://www.rdocumentation.org/packages/survey/versions/4.1-1/topics/subset.survey.design"
+        ><code>subset.survey.design</code></a
+      >
+    </p>
+    <p>
+      However, in the following two scenarios, subsetting versus formal
+      subpopulations will give identical results:
+    </p>
+    <ol type="1">
+      <li>
+        The subpopulation are strata. For example, say you stratify by race
+        where race can take on categories “white”, “black” and “other.. If you
+        want to look at one race (”black”) (or several races [“black” and
+        “other”]), these subpopulations capture one (or several) entire strata.
+      </li>
+      <li>Every cluster has at least one member of the subpopulation.</li>
+    </ol>
+    <p>
+      Source:
+      https://notstatschat.rbind.io/2021/07/22/subsets-and-subpopulations-in-survey-inference/
+    </p>
+    <a href="https://errickson.net">Home</a> |
+    <a href="https://errickson.net/blog">Back to blog</a>
+  </body>
+</html>

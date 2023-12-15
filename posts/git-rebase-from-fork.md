@@ -1,7 +1,4 @@
----
-title: "Rebasing a fork on git"
-date: 2023-12-09T06:16:42-05:00
----
+# Rebasing a fork on git
 
 There's tons of resources online about git rebase, but it took me a while to
 find a solution to this specific problem.

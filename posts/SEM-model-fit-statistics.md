@@ -1,7 +1,4 @@
----
-title: "Summary of SEM Model Fit Statistics"
-date: 2023-12-15T09:25:33-05:00
----
+# Summary of SEM Model Fit Statistics
 
 I can never keep track of the various model fit statistics. Thankfully, the book
 [Handbook of Structural Equation

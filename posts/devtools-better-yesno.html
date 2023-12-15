@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eval vs Get</title>
+    <link
+      rel="icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../josherrickson.github.io/style.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
+      lang="en-us"
+    />
+    <meta name="Author" content="Josh Errickson" />
+  </head>
+  <body>
+    <h1 id="a-more-sane-yesno-for-devtools">
+      A More Sane <code>yesno()</code> for devtools
+    </h1>
+    <p>
+      <strong>Update</strong>: There’s a better approach in this
+      <a href="%7B%7B%3C%20ref%20%22R-package-hooks%22%20%3E%7D%7D">new post</a
+      >.
+    </p>
+    <p>
+      When working with
+      <a href="https://devtools.r-lib.org/"><strong>devtools</strong></a
+      >, you’ll often be asked a yes/no question and get the annoying prompt of
+      three randomly ordered and randomly worded variations of “Yes” and “No”,
+      so that you have to think hard to pick the right one. I get what they’re
+      trying to do (force you to actually think about the question rather than
+      hitting “Y” repeatedly) but I find it very annoying. Here’s a fix.
+    </p>
+    <p>
+      Add this code to your .Rprofile, and you’ll now get a static 1: Yes, 2: No
+      prompt.
+    </p>
+    <pre class="r"><code>suppressMessages(require(devtools))
+yesno &lt;- function(...) {
+  cat(paste0(..., collapse = &quot;&quot;))
+  # For whatever reason, devtools:::yesno returns `TRUE` if you
+  # select a No option, and `FALSE` if you select a Yes option
+  utils::menu(c(&quot;Yes&quot;, &quot;No&quot;)) != 1
+}
+utils::assignInNamespace(&quot;yesno&quot;, yesno, &quot;devtools&quot;)
+# remove stand-alone `yesno`
+rm(yesno)</code></pre>
+    <a href="https://errickson.net">Home</a> |
+    <a href="https://errickson.net/blog">Back to blog</a>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eval vs Get</title>
+    <link
+      rel="icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../josherrickson.github.io/style.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
+      lang="en-us"
+    />
+    <meta name="Author" content="Josh Errickson" />
+  </head>
+  <body>
+    <h1 id="category-wise-comparisons-in-stata-18s-dtable">
+      Category-wise comparisons in Stata 18’s <code>dtable</code>
+    </h1>
+    <p>
+      Stata 18’s new
+      <a href="https://www.stata.com/manuals/rdtable.pdf"
+        ><code>dtable</code></a
+      >
+      is terrific for creating a “Table 1”, but by default if provided a
+      categorical variable and asked to test for differences by group, it will
+      provide a single Chi-sq test by default.
+    </p>
+    <pre class="stata"><code>. sysuse auto, clear
+(1978 automobile data)
+
+. dtable i.rep78, by(foreign, tests)
+note: using test pearson across levels of foreign for rep78.
+
+-----------------------------------------------------------
+                                  Car origin
+                    Domestic    Foreign     Total     Test
+-----------------------------------------------------------
+N                  52 (70.3%) 22 (29.7%) 74 (100.0%)
+Repair record 1978
+  1                  2 (4.2%)   0 (0.0%)    2 (2.9%) &lt;0.001
+  2                 8 (16.7%)   0 (0.0%)   8 (11.6%)
+  3                27 (56.2%)  3 (14.3%)  30 (43.5%)
+  4                 9 (18.8%)  9 (42.9%)  18 (26.1%)
+  5                  2 (4.2%)  9 (42.9%)  11 (15.9%)
+-----------------------------------------------------------</code></pre>
+    <p>
+      Instead you may want a category-by-category comparison of proportions.
+      We’ll need to create a series of binary variables first.
+    </p>
+    <pre class="stata"><code>. quietly tab rep78, gen(repcat)
+
+. label var repcat1 &quot;Repair Record Category 1&quot;
+
+. label var repcat2 &quot;Repair Record Category 2&quot;
+
+. label var repcat3 &quot;Repair Record Category 3&quot;
+
+. label var repcat4 &quot;Repair Record Category 4&quot;
+
+. label var repcat5 &quot;Repair Record Category 5&quot;</code></pre>
+    <p>
+      Next, we can add each of the <code>repcat*</code> to <code>dtable</code>,
+      but preface with <code>1.</code> to only include the “yes” for each
+      binary.
+    </p>
+    <pre class="stata"><code>
+. dtable 1.repcat*, by(foreign, tests)
+note: using test pearson across levels of foreign for repcat1, repcat2, repcat3, repcat4, and repcat5.
+
+-----------------------------------------------------------------
+                                        Car origin
+                          Domestic    Foreign     Total     Test
+-----------------------------------------------------------------
+N                        52 (70.3%) 22 (29.7%) 74 (100.0%)
+Repair Record Category 1
+  1                        2 (4.2%)   0 (0.0%)    2 (2.9%)  0.342
+Repair Record Category 2
+  1                       8 (16.7%)   0 (0.0%)   8 (11.6%)  0.047
+Repair Record Category 3
+  1                      27 (56.2%)  3 (14.3%)  30 (43.5%)  0.001
+Repair Record Category 4
+  1                       9 (18.8%)  9 (42.9%)  18 (26.1%)  0.036
+Repair Record Category 5
+  1                        2 (4.2%)  9 (42.9%)  11 (15.9%) &lt;0.001
+-----------------------------------------------------------------</code></pre>
+    <p>
+      So we have the tests we want (at least, if you’re OK with a Chi-sq test
+      for each binary against the group variable), but the extra “1” entries is
+      redundant. We can use
+      <a href="https://www.stata.com/manuals/tablescollectstyleheader.pdf"
+        ><code>collect</code></a
+      >
+      to modify this.
+    </p>
+    <pre
+      class="stata"
+    ><code>. collect style header repcat1 repcat2 repcat3 repcat4 repcat5, level(hide)
+
+. collect preview
+
+-----------------------------------------------------------------
+                                        Car origin
+                          Domestic    Foreign     Total     Test
+-----------------------------------------------------------------
+N                        52 (70.3%) 22 (29.7%) 74 (100.0%)
+Repair Record Category 1   2 (4.2%)   0 (0.0%)    2 (2.9%)  0.342
+Repair Record Category 2  8 (16.7%)   0 (0.0%)   8 (11.6%)  0.047
+Repair Record Category 3 27 (56.2%)  3 (14.3%)  30 (43.5%)  0.001
+Repair Record Category 4  9 (18.8%)  9 (42.9%)  18 (26.1%)  0.036
+Repair Record Category 5   2 (4.2%)  9 (42.9%)  11 (15.9%) &lt;0.001
+-----------------------------------------------------------------</code></pre>
+    <a href="https://errickson.net">Home</a> |
+    <a href="https://errickson.net/blog">Back to blog</a>
+  </body>
+</html>

@@ -1,10 +1,4 @@
----
-title: "Disable Slidy Click Advance"
-date: 2023-03-22T13:30:35-04:00
-tags:
-  - R
-  - Rmarkdown
----
+# Disable Slidy Click Advance
 
 [Slidy
 presentations](https://bookdown.org/yihui/rmarkdown/slidy-presentation.html) in

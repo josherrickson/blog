@@ -1,9 +1,4 @@
----
-title: "Subsets and subpopulations in complex survey designs"
-date: 2023-03-22T13:20:56-04:00
-tags:
-  - statistics
----
+# Subsets and subpopulations in complex survey designs
 
 Generally you should **not** just subset complex survey data to do subpopulation
 analysis, instead using the built in tools, e.g. Stata's [`svy, subpop(z):

@@ -1,9 +1,4 @@
----
-title: "Move N= in Stata 18's `dtable`"
-date: 2023-05-31T09:46:01-04:00
-tags:
-  - Stata
----
+# Move N= in Stata 18's `dtable`
 
 By default, the [`dtable`](https://www.stata.com/manuals/rdtable.pdf) command
 places the sample size in its own row:

@@ -1,7 +1,4 @@
----
-title: "Expect_silent and Debugging"
-date: 2023-03-28T09:27:03-04:00
----
+# Expect_silent and Debugging
 
 When using the [`testthat`](https://testthat.r-lib.org/) package, there is a
 function,

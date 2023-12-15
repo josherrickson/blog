@@ -1,8 +1,4 @@
----
-title: "Displaying R Version on Launch"
-date: 2023-11-26T21:28:51-05:00
-draft: false
----
+# Displaying R Version on Launch
 
 I've started using [rig](https://github.com/r-lib/rig) to manage my R versions,
 since I need both current and development versions. I wanted a way to keep track

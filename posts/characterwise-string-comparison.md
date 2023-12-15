@@ -1,9 +1,4 @@
----
-title: "Character-wise String Comparison in R"
-date: 2023-03-29T06:05:44-04:00
-tags:
-  - R
----
+# Character-wise String Comparison in R
 
 If you have two strings in R and want to check character-by-character equality:
 

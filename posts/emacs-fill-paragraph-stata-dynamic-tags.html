@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eval vs Get</title>
+    <link
+      rel="icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../josherrickson.github.io/style.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
+      lang="en-us"
+    />
+    <meta name="Author" content="Josh Errickson" />
+  </head>
+  <body>
+    <h1 id="stopping-fill-paragraph-from-breaking-stata-inline-dynamics-tags">
+      Stopping <code>fill-paragraph</code> from breaking Stata inline dynamics
+      tags
+    </h1>
+    <p>
+      Stata inline dynamic tags contain spaces. E.g.
+      <code>&lt;&lt;dd_display: %9.3f abs(_b[2.rep78])&gt;&gt;</code>. This
+      means that when using
+      <a
+        href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Commands.html"
+        ><code>fill-paragraph</code></a
+      >, the inline tag can be broken, which Stata’s
+      <a href="https://www.stata.com/manuals/rptdyndoc.pdf"
+        ><code>dyndoc</code></a
+      >
+      and
+      <a href="https://www.stata.com/manuals/rptdyntext.pdf"
+        ><code>dyntext</code></a
+      >
+      commands will break on.
+    </p>
+    <p>
+      This snippet to include in your Emacs
+      <a href="https://github.com/josherrickson/dotfiles/blob/main/init.el"
+        >init</a
+      >
+      file fixes this issue.
+    </p>
+    <pre><code>(defun my-in-dd-display ()
+  &quot;Don&#39;t break lines in Inline Stata Dynamic Tags.&quot;
+  (save-excursion
+    (save-match-data
+      (and (re-search-backward &quot;&gt;&gt;\\|\\(&lt;&lt;dd_display:\\)&quot;
+                               (line-beginning-position) t)
+       (match-beginning 1)))))
+(add-hook &#39;fill-nobreak-predicate #&#39;my-in-dd-display)</code></pre>
+    <p>
+      After defining the function with <code>defun</code>, the
+      <code>add-hook</code> function is what enables it’s use with
+      <code>fill-paragraph</code>. This comes from
+      <a href="https://emacs.stackexchange.com/a/78562" class="uri"
+        >https://emacs.stackexchange.com/a/78562</a
+      >
+    </p>
+    <a href="https://errickson.net">Home</a> |
+    <a href="https://errickson.net/blog">Back to blog</a>
+  </body>
+</html>

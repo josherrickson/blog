@@ -1,7 +1,4 @@
----
-title: "Making TextEdit start with a Blank Document"
-date: 2023-06-01T14:19:07-04:00
----
+# Making TextEdit start with a Blank Document
 
 It used to be that launching OSX's TextEdit would open a blank document for
 immediate typing/pasting. At some point over the last several years, it changed

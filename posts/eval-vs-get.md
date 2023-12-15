@@ -1,10 +1,4 @@
----
-title: "Eval vs Get"
-date: 2023-03-27T10:14:52-04:00
-tags:
-  - R
----
-
+# Eval vs Get
 
 I've been fighting damn scoping issues lately and finally sat down to figure out
 what works and when. Documenting some of them here

@@ -1,11 +1,4 @@
----
-title: "Color by Significance in R's `forestplot`"
-date: 2023-03-22T12:44:42-04:00
-tags:
-  - R
-  - visualization
-  - forestplot
----
+# Color by Significance in R's `forestplot`
 
 The
 [forestplot](https://cran.r-project.org/web/packages/forestplot/vignettes/forestplot.html)

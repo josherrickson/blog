@@ -1,9 +1,4 @@
----
-title: "The Rule of Three"
-date: 2023-03-22T13:05:25-04:00
-tags:
-  - statistics
----
+# The Rule of Three
 
 https://en.wikipedia.org/wiki/Rule_of_three_(statistics)
 

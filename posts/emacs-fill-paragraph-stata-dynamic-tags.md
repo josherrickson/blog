@@ -1,10 +1,4 @@
----
-title: "Stopping `fill-paragraph` from breaking Stata inline dynamics tags"
-date: 2023-08-22T05:56:45-04:00
-tags:
-  - emacs
-  - stata
----
+# Stopping `fill-paragraph` from breaking Stata inline dynamics tags
 
 Stata inline dynamic tags contain spaces. E.g.
 `<<dd_display: %9.3f abs(_b[2.rep78])>>`. This means that when using

@@ -1,7 +1,4 @@
----
-title: "Making a bibliography fit on one page in Beamer through Quarto"
-date: 2023-07-31T11:54:18-04:00
----
+# Making a bibliography fit on one page in Beamer through Quarto
 
 When using [Quarto](https://quarto.org/docs/get-started/hello/rstudio.html), you
 can add a bibliography with something like

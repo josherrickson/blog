@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eval vs Get</title>
+    <link
+      rel="icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../josherrickson.github.io/style.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
+      lang="en-us"
+    />
+    <meta name="Author" content="Josh Errickson" />
+  </head>
+  <body>
+    <h1 id="character-wise-string-comparison-in-r">
+      Character-wise String Comparison in R
+    </h1>
+    <p>
+      If you have two strings in R and want to check character-by-character
+      equality:
+    </p>
+    <pre class="r"><code>a &lt;- &quot;abcdef&quot;
+b &lt;- &quot;abcdff&quot;
+Reduce(`==`, strsplit(c(a, b), &quot;&quot;))</code></pre>
+    <p>This results in:</p>
+    <pre class="r"><code>&gt; Reduce(`==`, strsplit(c(a, b), &quot;&quot;))
+[1]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE</code></pre>
+    <a href="https://errickson.net">Home</a> |
+    <a href="https://errickson.net/blog">Back to blog</a>
+  </body>
+</html>

@@ -1,9 +1,4 @@
----
-title: "R's `all.equal`, relative vs absolute"
-date: 2023-04-06T10:29:25-04:00
-tags:
-  - R
----
+# R's `all.equal`, relative vs absolute
 
 The
 [`all.equal()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/all.equal)

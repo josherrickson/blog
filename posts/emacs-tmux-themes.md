@@ -1,7 +1,4 @@
----
-title: "Fixing colors in Emacs themes in tmux"
-date: 2023-10-14T20:12:30-04:00
----
+# Fixing colors in Emacs themes in tmux
 
 For years I've struggled with certain themes in Emacs having incorrect colors
 when run in the terminal (`emacs -nw`) but appearing correct in GUI Emacs.

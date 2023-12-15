@@ -1,7 +1,4 @@
----
-title: "Hooks for loading R packages"
-date: 2023-10-13T12:03:27-04:00
----
+# Hooks for loading R packages
 
 The `setHook` function can be used to add hooks when loading (or unloading) R
 packages. For example, to update my [previous post]({{< ref

@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eval vs Get</title>
+    <link
+      rel="icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../josherrickson.github.io/style.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
+      lang="en-us"
+    />
+    <meta name="Author" content="Josh Errickson" />
+  </head>
+  <body>
+    <h1 id="rebasing-a-fork-on-git">Rebasing a fork on git</h1>
+    <p>
+      There’s tons of resources online about git rebase, but it took me a while
+      to find a solution to this specific problem.
+    </p>
+    <p>
+      You have a fork of a repository. You’ve made commits on your fork, and
+      there are also new commits on the original repository (call it the
+      “upstream repository”). You want to pull in those changes, but
+      <em>before</em> your commits, so you don’t have a merge.
+    </p>
+    <ol type="1">
+      <li>Add the upstream repository as a remote:</li>
+    </ol>
+    <pre><code>git remote add upstream https://github.com/&lt;upstream user&gt;/&lt;upstream repository&gt;.git</code></pre>
+    <ol start="2" type="1">
+      <li>Fetch the upstream changes:</li>
+    </ol>
+    <pre><code>git fetch upstream</code></pre>
+    <ol start="3" type="1">
+      <li>Rebase:</li>
+    </ol>
+    <pre><code>git rebase upstream/&lt;branch&gt;</code></pre>
+    <ol start="4" type="1">
+      <li>Push, with a force:</li>
+    </ol>
+    <pre><code>git push origin &lt;branch&gt; --force</code></pre>
+    <p>
+      What if you’ve already commited the merge? Find the hash of the last
+      commit that <strong>you</strong> made, then run
+    </p>
+    <pre><code>git reset --hard &lt;hash&gt;</code></pre>
+    <p>
+      This only works if the merge is the last thing you’ve done; if you have
+      changes on your fork both before and after the branch, it’ll be far more
+      complicated.
+    </p>
+    <p>
+      This is based off many sources, but primarily
+      <a
+        href="https://medium.com/@topspinj/how-to-git-rebase-into-a-forked-repo-c9f05e821c8a"
+        class="uri"
+        >https://medium.com/@topspinj/how-to-git-rebase-into-a-forked-repo-c9f05e821c8a</a
+      >.
+    </p>
+    <a href="https://errickson.net">Home</a> |
+    <a href="https://errickson.net/blog">Back to blog</a>
+  </body>
+</html>

@@ -1,10 +1,4 @@
----
-title: "A More Sane `yesno()` for devtools"
-date: 2023-03-22T13:45:59-04:00
-tags:
-  - R
-  - devtools
----
+# A More Sane `yesno()` for devtools
 
 **Update**: There's a better approach in this [new post]({{< ref
 "R-package-hooks" >}}).

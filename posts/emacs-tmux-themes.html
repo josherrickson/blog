@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eval vs Get</title>
+    <link
+      rel="icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://errickson.net/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../josherrickson.github.io/style.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="Josh Errickson, Josh, Errickson, Statistics, R, Stata"
+      lang="en-us"
+    />
+    <meta name="Author" content="Josh Errickson" />
+  </head>
+  <body>
+    <h1 id="fixing-colors-in-emacs-themes-in-tmux">
+      Fixing colors in Emacs themes in tmux
+    </h1>
+    <p>
+      For years I’ve struggled with certain themes in Emacs having incorrect
+      colors when run in the terminal (<code>emacs -nw</code>) but appearing
+      correct in GUI Emacs. Finally found a solution - the issue was with tmux.
+      The fix for me was to include this in my .tmux.conf:
+    </p>
+    <pre><code>set -g default-terminal &#39;screen-256color&#39;
+set -ga terminal-overrides &#39;,*256col*:Tc&#39;</code></pre>
+    <p>
+      This comes from
+      https://github.com/alacritty/alacritty/issues/109#issuecomment-440353106.
+      There are a number of other similar suggested fixes in that thread if this
+      doesn’t work.
+    </p>
+    <p>One thing that made testing this easier is this script:</p>
+    <pre><code>curl -s https://gist.githubusercontent.com/lifepillar/09a44b8cf0f9397465614e622979107f/raw/24-bit-color.sh &gt;24-bit-color.sh
+bash 24-bit-color.sh</code></pre>
+    <p>
+      With the correct settings, each row of colors is an almost smooth
+      gradient. With the incorrect settings, there are clear discrepancies in
+      the gradient.
+    </p>
+    <a href="https://errickson.net">Home</a> |
+    <a href="https://errickson.net/blog">Back to blog</a>
+  </body>
+</html>

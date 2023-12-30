@@ -5,7 +5,7 @@ I can never keep track of the various model fit statistics. Thankfully, the book
 Modeling](https://www.guilford.com/books/Handbook-of-Structural-Equation-Modeling/Rick-Hoyle/9781462544646)[^1]
 includes a chapter by West et al[^2] including this handy chart:
 
-[<img src="images/west_et_al_fit_statistics.png" width="600" alt="Table of fit statistics and related thresholds">](images/west_et_al_fit_statistics.png)
+[<img src="images/west_et_al_fit_statistics.png" width="600" class="image_invert" alt="Table of fit statistics and related thresholds">](images/west_et_al_fit_statistics.png)
 
 A few other notes I've collected:
 

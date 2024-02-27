@@ -6,7 +6,7 @@ having the re-learn them again in the future.
 
 [RSS](rss.xml)
 
-- [Summary of SEM Model Fit Statistics](sem-model-fit-statistics.html) 12/15/23
+- [Adjusting spacing between icons in the Mac menubar](mac-menu-bar-spacing.html)2/27/24
 - [Rebasing a fork on git](git-rebase-from-fork.html) 12/09/23
 - [Displaying R Version on Launch](r-version-on-launch.html) 11/26/23
 - [Fixing colors in Emacs themes in tmux](emacs-tmux-themes.html) 10/14/23

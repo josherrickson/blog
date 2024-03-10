@@ -13,7 +13,7 @@ docs/index.html: index.md header.html footer.html
 	@npx prettier tmp.html -w
 	@cp header.html header-tmp.html
 	@sed -i '' "s/::TITLE::/Blog/" header-tmp.html
-	@cat header-tmp.html tmp.html footer.html > $@
+	@cat header-tmp.html tmp.html footer-index.html > $@
 	@rm tmp.html
 	@rm header-tmp.html
 

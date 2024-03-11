@@ -23,10 +23,9 @@ docs/%.html: posts/%.html header.html footer.html
 	@echo "$< -> $@"
 	@mkdir -p docs
 	@cp header.html header-tmp.html
-	sed -i '' 's/::TITLE::/$(shell sed -nE "s|.*<h1>(.*)</h1>.*|\\1|p" $< | sed "s/<[^>]*>//g" | sed "s/\//\\\\\//g")/' header-tmp.html
+	@sed -i '' 's/::TITLE::/$(shell sed -nE "s|.*<h1>(.*)</h1>.*|\\1|p" $< | sed "s/<[^>]*>//g" | sed "s/\//\\\\\//g")/' header-tmp.html
 	@cat header-tmp.html $< footer.html > $@
 	@rm header-tmp.html
-
 
 move-files:
 	@echo "Moving files"

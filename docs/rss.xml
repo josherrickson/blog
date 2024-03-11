@@ -58,25 +58,25 @@
 
     <item>
       <title>Making TextEdit start with a Blank Document</title>
-      <link>http://errickson.net/blog/textedit_new_document.html</link>
+      <link>http://errickson.net/blog/textedit-new-document.html</link>
       <pubDate>Thu, 01 Jun 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Move N= in Stata 18's `dtable`</title>
-      <link>http://errickson.net/blog/stata18_dtable_move_samplesize.html</link>
+      <link>http://errickson.net/blog/stata18-dtable-move-samplesize.html</link>
       <pubDate>Wed, 31 May 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Category-wise comparisons in Stata 18's `dtable`</title>
-      <link>http://errickson.net/blog/stata18_dtable_category_compare.html</link>
+      <link>http://errickson.net/blog/stata18-dtable-category-compare.html</link>
       <pubDate>Thu, 04 May 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>R's `sys.call` vs `match.call`</title>
-      <link>http://errickson.net/blog/syscall_vs_matchcall.html</link>
+      <link>http://errickson.net/blog/syscall-vs-matchcall.html</link>
       <pubDate>Sat, 29 Apr 2023 00:00:00 GMT</pubDate>
     </item>
 
@@ -154,7 +154,7 @@
 
     <item>
       <title>Ignore whitespace on Git diffs</title>
-      <link>http://errickson.net/blog/git_ignore_whitespace.html</link>
+      <link>http://errickson.net/blog/git-ignore-whitespace.html</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 

@@ -23,7 +23,7 @@ docs/%.html: posts/%.html header.html footer.html
 	@echo "$< -> $@"
 	@mkdir -p docs
 	@cp header.html header-tmp.html
-#	@sed -i '' "s/::TITLE::/$$(head -n 1 $< | sed 's/^# //' | tr -d '\n')/" header-tmp.html
+	sed -i '' 's/::TITLE::/$(shell sed -nE "s|.*<h1>(.*)</h1>.*|\\1|p" $< | sed "s/<[^>]*>//g" | sed "s/\//\\\\\//g")/' header-tmp.html
 	@cat header-tmp.html $< footer.html > $@
 	@rm header-tmp.html
 

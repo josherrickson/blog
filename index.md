@@ -28,6 +28,6 @@ having the re-learn them again in the future.
 - [How to Scroll in Tmux](scrolling-in-tmux.html) 03/22/23
 - [The Rule of Three](the-rule-of-three.html) 03/22/23
 - [Exclude files from git commands](git-exclude-files.html) 03/22/23
-- [Color by Significance in R's `forestplot`](forestplot-color-by-significance.html) 03/22/23
-- [Increase ALL Text Size in ggplot](ggplot-increase-all-text-size.html) 03/22/23
-- [Ignore whitespace on Git diffs](git_ignore_whitespace.html) 03/22/23
+- [Color by Significance in R's **forestplot**](forestplot-color-by-significance.html) 03/22/23
+- [Increase ALL Text Size in **ggplot2**](ggplot-increase-all-text-size.html) 03/22/23
+- [Ignore whitespace on Git diffs](git-ignore-whitespace.html) 03/22/23

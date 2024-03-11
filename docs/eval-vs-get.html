@@ -2,21 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>R's `eval` vs `get`</title>
+    <title>::TITLE::</title>
     <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../josherrickson.github.io/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-<h1 id="rs-eval-vs-get">R’s <code>eval</code> vs <code>get</code></h1>
+<h1>R’s <code>eval</code> vs <code>get</code></h1>
+
 <p>
   I’ve been fighting damn scoping issues lately and finally sat down to figure
   out what works and when. Documenting some of them here
 </p>
-<p>The lessons I’ve learned from this:</p>
+
+<p>
+  The lessons I’ve learned from this:
+</p>
+
 <ol type="1">
   <li><code>eval(a, envir = ... )</code> DOES NOT WORK!</li>
   <li>Instead, do <code>eval(str2lang("a"), envir = ...)</code></li>
@@ -24,105 +30,110 @@
   <li><code>eval.parent(str2lang("a"))</code> works and SKIPS GENERIC!</li>
   <li><code>get("a", envir = ...)</code> seems to always work as expected</li>
 </ol>
+
 <p>
   So to summarize, I think <code>get</code> is always a safer option than
   <code>eval</code>. In addition, <code>get</code> is much faster:
 </p>
-<pre class="r"><code>&gt; f1 &lt;- function() {
-+ eval.parent(str2lang(&quot;a&quot;))
+
+<pre data-lang="R"><code>> f1 <- function() {
++ eval.parent(str2lang("a"))
 + }
-&gt; f2 &lt;- function() {
-+ get(&quot;a&quot;, envir = sys.frame(0))
+> f2 <- function() {
++ get("a", envir = sys.frame(0))
 + }
-&gt; a &lt;- 1
-&gt; microbenchmark:::microbenchmark(f1(), f2(), times = 10000)
+> a <- 1
+> microbenchmark:::microbenchmark(f1(), f2(), times = 10000)
 Unit: nanoseconds
  expr  min   lq      mean median   uq     max neval
  f1() 1353 1558 1854.5325   1640 1763 1019547 10000
  f2()  533  656  808.4462    697  738  800074 10000</code></pre>
+
 <p>
   Obviously this doesn’t cover more advanced situations, like evaluating full
   calls, but I’m still working on puzzling all that out.
 </p>
+
 <p>Here’s the sample code I used to evaluate this:</p>
-<pre class="r"><code>foo &lt;- function(x) {
-  a &lt;- &quot;in generic&quot;
-  UseMethod(&quot;foo&quot;)
+
+<pre data-lang="R input"><code>foo <- function(x) {
+  a <- "in generic"
+  UseMethod("foo")
 }
 
-foo.numeric &lt;- function(x) {
-  a &lt;- &quot;in specific&quot;
+foo.numeric <- function(x) {
+  a <- "in specific"
   print(sys.calls())
 
   # Itself
-  print(paste(&quot;a:&quot;,
+  print(paste("a:",
                a
               ))
   # Eval
-  print(paste(&quot;eval(a):&quot;,
+  print(paste("eval(a):",
                eval(a)
         ))
-  print(paste(&#39;eval(str2lang(&quot;a&quot;)):&#39;,
-               eval(str2lang(&quot;a&quot;))
+  print(paste('eval(str2lang("a")):',
+               eval(str2lang("a"))
         ))
 
   # eval.parent
-  print(paste(&quot;eval.parent(a):&quot;,
+  print(paste("eval.parent(a):",
                eval.parent(a)
               ))
-  print(paste(&#39;eval.parent(str2lang(&quot;a&quot;)):&#39;,
-               eval.parent(str2lang(&quot;a&quot;))
+  print(paste('eval.parent(str2lang("a")):',
+               eval.parent(str2lang("a"))
               ))
 
   # eval with sys.frames
-  print(paste(&quot;eval(a, envir = sys.frame(0)):&quot;,
+  print(paste("eval(a, envir = sys.frame(0)):",
                eval(a, envir = sys.frame(0))
               ))
-  print(paste(&#39;eval(str2lang(&quot;a&quot;), envir = sys.frame(0)):&#39;,
-               eval(str2lang(&quot;a&quot;), envir = sys.frame(0))
+  print(paste('eval(str2lang("a"), envir = sys.frame(0)):',
+               eval(str2lang("a"), envir = sys.frame(0))
               ))
-  print(paste(&quot;eval(a, envir = sys.frame(1)):&quot;,
+  print(paste("eval(a, envir = sys.frame(1)):",
                eval(a, envir = sys.frame(1))
               ))
-  print(paste(&#39;eval(str2lang(&quot;a&quot;), envir = sys.frame(1)):&#39;,
-               eval(str2lang(&quot;a&quot;), envir = sys.frame(1))
+  print(paste('eval(str2lang("a"), envir = sys.frame(1)):',
+               eval(str2lang("a"), envir = sys.frame(1))
               ))
 
   # get
-  print(paste(&#39;get(&quot;a&quot;):&#39;,
-               get(&quot;a&quot;)
+  print(paste('get("a"):',
+               get("a")
               ))
 
   # get with sys.frames
-  print(paste(&#39;get(&quot;a&quot;, envir = sys.frame(0)):&#39;,
-               get(&quot;a&quot;, envir = sys.frame(0))
+  print(paste('get("a", envir = sys.frame(0)):',
+               get("a", envir = sys.frame(0))
               ))
-  print(paste(&#39;get(&quot;a&quot;, envir = sys.frame(1)):&#39;,
-               get(&quot;a&quot;, envir = sys.frame(1))
+  print(paste('get("a", envir = sys.frame(1)):',
+               get("a", envir = sys.frame(1))
               ))
 }
 
-a &lt;- &quot;in global&quot;
+a <- "in global"
 foo(1)</code></pre>
-<p>This produces:</p>
-<pre class="r"><code>[[1]]
+
+<pre data-lang="R output"><code>[[1]]
 foo(1)
 
 [[2]]
-UseMethod(&quot;foo&quot;)
+UseMethod("foo")
 
-[1] &quot;a: in specific&quot;
-[1] &quot;eval(a): in specific&quot;
-[1] &quot;eval(str2lang(\&quot;a\&quot;)): in specific&quot;
-[1] &quot;eval.parent(a): in specific&quot;
-[1] &quot;eval.parent(str2lang(\&quot;a\&quot;)): in global&quot;
-[1] &quot;eval(a, envir = sys.frame(0)): in specific&quot;
-[1] &quot;eval(str2lang(\&quot;a\&quot;), envir = sys.frame(0)): in global&quot;
-[1] &quot;eval(a, envir = sys.frame(1)): in specific&quot;
-[1] &quot;eval(str2lang(\&quot;a\&quot;), envir = sys.frame(1)): in generic&quot;
-[1] &quot;get(\&quot;a\&quot;): in specific&quot;
-[1] &quot;get(\&quot;a\&quot;, envir = sys.frame(0)): in global&quot;
-[1] &quot;get(\&quot;a\&quot;, envir = sys.frame(1)): in generic&quot;</code></pre>
+[1] "a: in specific"
+[1] "eval(a): in specific"
+[1] "eval(str2lang(\"a\")): in specific"
+[1] "eval.parent(a): in specific"
+[1] "eval.parent(str2lang(\"a\")): in global"
+[1] "eval(a, envir = sys.frame(0)): in specific"
+[1] "eval(str2lang(\"a\"), envir = sys.frame(0)): in global"
+[1] "eval(a, envir = sys.frame(1)): in specific"
+[1] "eval(str2lang(\"a\"), envir = sys.frame(1)): in generic"
+[1] "get(\"a\"): in specific"
+[1] "get(\"a\", envir = sys.frame(0)): in global"
+[1] "get(\"a\", envir = sys.frame(1)): in generic"</code></pre>
     <a href="../index.html">Home</a> |
     <a href="index.html">Back to blog</a>
   </body>

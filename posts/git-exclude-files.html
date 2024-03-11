@@ -1,0 +1,13 @@
+<h1>Exclude Files From Git Commands</h1>
+
+<p>
+  To exclude files from Git commands such as <code>git grep</code> or
+  <code>git diff</code>:
+</p>
+
+<pre data-lang="Bash"><code>git grep foobar -- ':!*.java'
+git diff -- ':!*.html' ':!abc.csv'</code></pre>
+
+<p>
+  Works for whole folders as well.
+</p>

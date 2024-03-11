@@ -1,10 +1,12 @@
-MD_FILES := $(wildcard posts/*.md)
-TMP=$(MD_FILES:.md=.html)
-HTML_FILES=$(subst posts,docs,$(TMP))
+SRC_DIR = posts
+DEST_DIR = docs
+
+HTML_FILES := $(wildcard $(SRC_DIR)/*.html)
+HTML_DEST_FILES := $(patsubst $(SRC_DIR)/%.html, $(DEST_DIR)/%.html, $(HTML_FILES))
 
 .PHONY: all move-files open
 
-all: docs/index.html $(HTML_FILES) move-files
+all: docs/index.html $(HTML_DEST_FILES) move-files
 
 docs/index.html: index.md header.html footer.html
 	@echo "$< -> $@"
@@ -17,15 +19,12 @@ docs/index.html: index.md header.html footer.html
 	@rm tmp.html
 	@rm header-tmp.html
 
-docs/%.html: posts/%.md header.html footer.html
+docs/%.html: posts/%.html header.html footer.html
 	@echo "$< -> $@"
 	@mkdir -p docs
-	@pandoc -o tmp.html $< --no-highlight
-	@npx prettier tmp.html -w
 	@cp header.html header-tmp.html
-	@sed -i '' "s/::TITLE::/$$(head -n 1 $< | sed 's/^# //' | tr -d '\n')/" header-tmp.html
-	@cat header-tmp.html tmp.html footer.html > $@
-	@rm tmp.html
+#	@sed -i '' "s/::TITLE::/$$(head -n 1 $< | sed 's/^# //' | tr -d '\n')/" header-tmp.html
+	@cat header-tmp.html $< footer.html > $@
 	@rm header-tmp.html
 
 

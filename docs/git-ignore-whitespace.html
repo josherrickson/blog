@@ -12,13 +12,24 @@
     <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-<h1>How to Scroll in Tmux</h1>
+<h1>
+  Ignore Whitespace on Git Diffs
+</h1>
 
 <p>
-  <code>Ctrl-b</code> then <code>[</code>, then you can use your normal
-  navigation keys to scroll around (eg. <code>Up Arrow</code> or
-  <code>PgDn</code>). Press <code>q</code> or <code>Ctrl-c</code> to quit scroll
-  mode.
+  By default, Git’s diff (<code>git diff</code> or on GitHub) show whitespace
+  changes as well as substantive changes.
+</p>
+
+<p>
+  To suppress them in <code>git diff</code>, add the <code>-b</code> flag:
+</p>
+
+<pre data-lang="Bash"><code>git diff -b</code></pre>
+
+<p>
+  To suppress on <a href="https://github.com">github.com</a>, append
+  <code>?w=1</code> to any diff’s URL.
 </p>
     <a href="../index.html">Home</a> |
     <a href="index.html">Back to blog</a>

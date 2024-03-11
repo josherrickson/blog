@@ -1,21 +1,28 @@
-# R's `eval` vs `get`
+<h1>R’s <code>eval</code> vs <code>get</code></h1>
 
-I've been fighting damn scoping issues lately and finally sat down to figure out
-what works and when. Documenting some of them here
+<p>
+  I’ve been fighting damn scoping issues lately and finally sat down to figure
+  out what works and when. Documenting some of them here
+</p>
 
-The lessons I've learned from this:
+<p>
+  The lessons I’ve learned from this:
+</p>
 
-1. `eval(a, envir = ... )` DOES NOT WORK!
-2. Instead, do `eval(str2lang("a"), envir = ...)`
-3. `eval.parent(a)` DOES NOT WORK!
-4. `eval.parent(str2lang("a"))` works and SKIPS GENERIC!
-6. `get("a", envir = ...)` seems to always work as expected
+<ol type="1">
+  <li><code>eval(a, envir = ... )</code> DOES NOT WORK!</li>
+  <li>Instead, do <code>eval(str2lang("a"), envir = ...)</code></li>
+  <li><code>eval.parent(a)</code> DOES NOT WORK!</li>
+  <li><code>eval.parent(str2lang("a"))</code> works and SKIPS GENERIC!</li>
+  <li><code>get("a", envir = ...)</code> seems to always work as expected</li>
+</ol>
 
-So to summarize, I think `get` is always a safer option than `eval`. In
-addition, `get` is much faster:
+<p>
+  So to summarize, I think <code>get</code> is always a safer option than
+  <code>eval</code>. In addition, <code>get</code> is much faster:
+</p>
 
-```r
-> f1 <- function() {
+<pre data-lang="R"><code>> f1 <- function() {
 + eval.parent(str2lang("a"))
 + }
 > f2 <- function() {
@@ -26,16 +33,16 @@ addition, `get` is much faster:
 Unit: nanoseconds
  expr  min   lq      mean median   uq     max neval
  f1() 1353 1558 1854.5325   1640 1763 1019547 10000
- f2()  533  656  808.4462    697  738  800074 10000
-```
+ f2()  533  656  808.4462    697  738  800074 10000</code></pre>
 
-Obviously this doesn't cover more advanced situations, like evaluating full
-calls, but I'm still working on puzzling all that out.
+<p>
+  Obviously this doesn’t cover more advanced situations, like evaluating full
+  calls, but I’m still working on puzzling all that out.
+</p>
 
-Here's the sample code I used to evaluate this:
+<p>Here’s the sample code I used to evaluate this:</p>
 
-```r
-foo <- function(x) {
+<pre data-lang="R input"><code>foo <- function(x) {
   a <- "in generic"
   UseMethod("foo")
 }
@@ -93,13 +100,9 @@ foo.numeric <- function(x) {
 }
 
 a <- "in global"
-foo(1)
-```
+foo(1)</code></pre>
 
-This produces:
-
-```r
-[[1]]
+<pre data-lang="R output"><code>[[1]]
 foo(1)
 
 [[2]]
@@ -116,5 +119,4 @@ UseMethod("foo")
 [1] "eval(str2lang(\"a\"), envir = sys.frame(1)): in generic"
 [1] "get(\"a\"): in specific"
 [1] "get(\"a\", envir = sys.frame(0)): in global"
-[1] "get(\"a\", envir = sys.frame(1)): in generic"
-```
+[1] "get(\"a\", envir = sys.frame(1)): in generic"</code></pre>

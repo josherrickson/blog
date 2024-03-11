@@ -1,0 +1,15 @@
+<h1>Character-wise String Comparison in R</h1>
+
+<p>
+  If you have two strings in R and want to check character-by-character
+  equality:
+</p>
+
+<pre data-lang="R input"><code>a <- "abcdef"
+b <- "abcdff"
+Reduce(`==`, strsplit(c(a, b), ""))</code></pre>
+
+<p>This results in:</p>
+
+<pre data-lang="R"><code>> Reduce(`==`, strsplit(c(a, b), ""))
+[1]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE</code></pre>

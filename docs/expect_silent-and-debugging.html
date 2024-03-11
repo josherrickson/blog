@@ -2,35 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>`expect_silent` and Debugging</title>
+    <title>::TITLE::</title>
     <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../josherrickson.github.io/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
   </head>
   <body>
-<h1 id="expect_silent-and-debugging">
-  <code>expect_silent</code> and Debugging
-</h1>
+<h1><code>expect_silent</code> and Debugging</h1>
+
 <p>
   When using the
   <a href="https://testthat.r-lib.org/"><code>testthat</code></a> package, there
   is a function,
-  <a href="https://testthat.r-lib.org/reference/expect_silent.html"
-    ><code>expect_silent()</code></a
-  >, to ensure no notes, warnings, or errors get produced.
+  <a href="https://testthat.r-lib.org/reference/expect_silent.html"><code>expect_silent()</code></a>,
+  to ensure no notes, warnings, or errors get produced.
 </p>
+
 <p>
   If you are trying to debug this call (either via explicit
-  <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/debug.html"
-    ><code>debug()</code></a
-  >
+  <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/debug.html"><code>debug()</code></a>
   or inserting a call to
-  <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/browser.html"
-    ><code>browser()</code></a
-  >), the <code>expect_silent()</code> will suppress all output. Remove the
+  <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/browser.html"><code>browser()</code></a>),
+  the <code>expect_silent()</code> will suppress all output. Remove the
   <code>expect_silent()</code> call to properly debug!
 </p>
     <a href="../index.html">Home</a> |

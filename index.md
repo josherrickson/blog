@@ -6,6 +6,7 @@ having the re-learn them again in the future.
 
 [RSS](rss.xml)
 
+- [Steps for Submitting an R Package to CRAN](R_pkg_submission.html) 3/15/24
 - [Adjusting spacing between icons in the Mac menubar](mac-menu-bar-spacing.html) 2/27/24
 - [Summary of SEM Model Fit Statistics](sem-model-fit-statistics.html) 12/15/23
 - [Rebasing a fork on git](git-rebase-from-fork.html) 12/09/23

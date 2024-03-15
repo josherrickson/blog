@@ -9,6 +9,12 @@
 
     <!-- Items -->
     <item>
+      <title>Steps for Submitting an R Package to CRAN</title>
+      <link>http://errickson.net/blog/R_pkg_submission.html</link>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
       <title>Adjusting spacing between icons in the Mac menubar</title>
       <link>http://errickson.net/blog/mac-menu-bar-spacing.html</link>
       <pubDate>Tue, 27 Feb 2024 00:00:00 GMT</pubDate>

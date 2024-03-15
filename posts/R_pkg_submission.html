@@ -1,0 +1,70 @@
+<h1>Steps for Submitting an R Package to CRAN</h1>
+
+<ol>
+  <li>
+    In DESCRIPTION, increment version number.
+  </li>
+
+  <li>
+    In NEWS, replace beta development number with new version number.
+  </li>
+
+  <li>
+    Ensure all checks pass. Locally, run <code>devtools::check()</code> to
+    ensure everything looks OK. Run each of the following to run the check on
+    the various remote resources and wait for emails (to the "cre" of the
+    package) to confirm:
+  </li>
+  <ul>
+    <li>
+      <code>devtools::check_win()</code>
+    </li>
+    <li>
+      <code>devtools::check_win_oldrelease()</code>
+    </li>
+    <li>
+      <code>devtools::check_win_devel()</code>
+    </li>
+    <li>
+      <code>devtools::check_mac_release()</code>
+    </li>
+    <li>
+      <code>devtools::check_rhub()</code> (This one tends to produce spurious
+      notes/warnings/errors.)
+    </li>
+  </ul>
+
+  <li>
+    If there are any outstanding notes/warnings/errors which you have not
+    eliminated, discuss them in the cran_comments.md file. Update
+    cran_comments.md for release.
+  </li>
+
+  <li>
+    Ensure you have no outstanding local changes; commit any changes. (You'll be
+    adding a tag later, so you want a commit here.)
+  <li>
+    Run <code>devtools::release()</code>
+    <ul>
+      <li>
+        If you have vignettes that compile as PDF, consider adding the
+        argument <code>args=c('--compact-vignettes=gs+qpdf')</code> to
+        reduce their size.
+      </li>
+    </ul>
+  </li>
+</ol>
+
+
+Once CRAN accepts the submission:
+
+<ol>
+  <li>
+    Place a tag on the commit the release is based on. (e.g. <code>git tag
+    vX.X.X; git push origin vX.X.X</code>)
+  </li>
+  <li>
+    In DESCRIPTION, append .9001 to the version number to flag the current
+    version as development.
+  </li>
+</ol>

@@ -9,6 +9,12 @@
 
     <!-- Items -->
     <item>
+      <title>Emacs and Dark mode</title>
+      <link>http://errickson.net/blog/emacs-dark-mode.html</link>
+      <pubDate>Sunx, 17 Mar 2024 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
       <title>Steps for Submitting an R Package to CRAN</title>
       <link>http://errickson.net/blog/R_pkg_submission.html</link>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>

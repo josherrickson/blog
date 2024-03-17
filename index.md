@@ -6,6 +6,7 @@ having the re-learn them again in the future.
 
 [RSS](rss.xml)
 
+- [Emacs and Dark Mode](emacs-dark-mode.html) 3/17/24
 - [Steps for Submitting an R Package to CRAN](R_pkg_submission.html) 3/15/24
 - [Adjusting spacing between icons in the Mac menubar](mac-menu-bar-spacing.html) 2/27/24
 - [Summary of SEM Model Fit Statistics](sem-model-fit-statistics.html) 12/15/23

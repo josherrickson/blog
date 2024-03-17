@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Emacs and Dark Mode</title>
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+  </head>
+  <body>
+<h1>Emacs and Dark Mode</h1>
+
+This handles Dark Mode (on mac). If you're running GUI Emacs, this code will
+automatically swap between themes based on Dark Mode status. In terminal, upon
+the launch of Emacs, it will choose the appropriate theme. If you change Dark
+Mode status if will <emph>not</emph> automatically update, but you can <code>M-x
+reapply-theme</code> at any point to update the theme based upon current Dark
+Mode.
+
+Importantly, this requires <a href="https://github.com/d12frosted/homebrew-emacs-plus">Emacs Plus</a>
+for the functionality to detect the current Dark Mode status. If you'd prefer
+not to use Emacs Plus, you can make GUI work like the terminal version easily.
+
+<pre data-lang="Emacs Lisp"><code>(use-package solarized-theme
+  :ensure t)
+
+(setq my-light-theme 'solarized-light)
+(setq my-dark-theme 'solarized-dark)
+
+;;;; Do not change anything below here, just update the two variables above.
+
+;; If not on a Mac, just load a theme
+(when (not (eq system-type 'darwin))
+    (load-theme my-dark-theme t))
+
+;; On a Mac
+(when (eq system-type 'darwin)
+  ;; Check if in terminal or GUI
+  (if window-system
+      ;; GUI Emacs
+      (progn
+        (defun my/apply-theme (appearance)
+          "Load theme, taking current system APPEARANCE into consideration."
+          (mapc #'disable-theme custom-enabled-themes)
+          (pcase appearance
+            ('light (load-theme my-light-theme t))
+            ('dark  (load-theme my-dark-theme  t))))
+        (add-hook 'ns-system-appearance-change-functions #'my/apply-theme))
+    ;; Terminal Emacs
+    (progn
+      (defun reapply-theme ()
+        "Check status of Dark Mode and apply appropriate pre-defined theme."
+        (interactive)
+
+        (let ((cmd-output (shell-command-to-string "defaults read -g AppleInterfaceStyle")))
+          (if (string-match-p "Dark" cmd-output)
+              (load-theme my-dark-theme t)
+            (load-theme my-light-theme t))))
+      (reapply-theme))))</code></pre>
+    <a href="../index.html">Home</a> |
+    <a href="index.html">Back to blog</a>
+    <p id="license">This work is licensed under
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0
+        <img style="height:1.5em!important;margin-left:3px;vertical-align:text-bottom;" src="https://errickson.net/images/cc-by-nc.png" alt="Creative Commons BY-NC image">
+      </a>
+    </p>
+
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Obtaining File Permissions in Octal Notation</title>
+    <link rel="icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://errickson.net/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://errickson.net/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+  </head>
+  <body>
+<h1>Obtaining File Permissions in Octal Notation</h1>
+
+<p>
+  <code>ls -l</code> can report file permission in symbolic notation:
+</p>
+
+<pre><code>-rw-r--r--  1 josh  staff    24B Mar 22 21:28 myfile.txt</code></pre>
+
+<p>
+  However, obtaining the permissions in octal notation instead (in this case
+  644) isn't as easy. The following command will do so.
+</p>
+
+<p>
+  On macOS:
+</p>
+
+<pre data-lang="bash"><code>stat -f '%Lp' filename</code></pre>
+
+<p>
+  On Linux:
+</p>
+
+<pre data-lang="bash"><code>stat -c '%a' filename</code></pre>
+    <a href="../index.html">Home</a> |
+    <a href="index.html">Back to blog</a>
+    <p id="license">This work is licensed under
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0
+        <img style="height:1.5em!important;margin-left:3px;vertical-align:text-bottom;" src="https://errickson.net/images/cc-by-nc.png" alt="Creative Commons BY-NC image">
+      </a>
+    </p>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<h1>Obtaining File Permissions in Octal Notation</h1>
+
+<p>
+  <code>ls -l</code> can report file permission in symbolic notation:
+</p>
+
+<pre><code>-rw-r--r--  1 josh  staff    24B Mar 22 21:28 myfile.txt</code></pre>
+
+<p>
+  However, obtaining the permissions in octal notation instead (in this case
+  644) isn't as easy. The following command will do so.
+</p>
+
+<p>
+  On macOS:
+</p>
+
+<pre data-lang="bash"><code>stat -f '%Lp' filename</code></pre>
+
+<p>
+  On Linux:
+</p>
+
+<pre data-lang="bash"><code>stat -c '%a' filename</code></pre>

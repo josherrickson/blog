@@ -11,168 +11,196 @@
     <item>
       <title>Obtaining File Permissions in Octal Notation</title>
       <link>http://errickson.net/blog/octal-permissions.html</link>
+      <guid>http://errickson.net/blog/octal-permissions.html</guid>
       <pubDate>Fri, 22 Mar 2024 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Emacs and Dark mode</title>
       <link>http://errickson.net/blog/emacs-dark-mode.html</link>
+      <guid>http://errickson.net/blog/emacs-dark-mode.html</guid>
       <pubDate>Sun, 17 Mar 2024 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Steps for Submitting an R Package to CRAN</title>
       <link>http://errickson.net/blog/R_pkg_submission.html</link>
+      <guid>http://errickson.net/blog/R_pkg_submission.html</guid>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Adjusting spacing between icons in the Mac menubar</title>
       <link>http://errickson.net/blog/mac-menu-bar-spacing.html</link>
+      <guid>http://errickson.net/blog/mac-menu-bar-spacing.html</guid>
       <pubDate>Tue, 27 Feb 2024 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Summary of SEM Model Fit Statistics</title>
       <link>http://errickson.net/blog/sem-model-fit-statistics.html</link>
+      <guid>http://errickson.net/blog/sem-model-fit-statistics.html</guid>
       <pubDate>Fri, 15 Dec 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Rebasing a fork on git</title>
       <link>http://errickson.net/blog/git-rebase-from-fork.html</link>
+      <guid>http://errickson.net/blog/git-rebase-from-fork.html</guid>
       <pubDate>Sat, 09 Dec 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Displaying R Version on Launch</title>
       <link>http://errickson.net/blog/r-version-on-launch.html</link>
+      <guid>http://errickson.net/blog/r-version-on-launch.html</guid>
       <pubDate>Sun, 26 Nov 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Fixing colors in Emacs themes in tmux</title>
       <link>http://errickson.net/blog/emacs-tmux-themes.html</link>
+      <guid>http://errickson.net/blog/emacs-tmux-themes.html</guid>
       <pubDate>Sat, 14 Oct 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Hooks for loading R packages</title>
       <link>http://errickson.net/blog/r-package-hooks.html</link>
+      <guid>http://errickson.net/blog/r-package-hooks.html</guid>
       <pubDate>Fri, 13 Oct 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Stopping `fill-paragraph` from breaking Stata inline dynamics tags</title>
       <link>http://errickson.net/blog/emacs-fill-paragraph-stata-dynamic-tags.html</link>
+      <guid>http://errickson.net/blog/emacs-fill-paragraph-stata-dynamic-tags.html</guid>
       <pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Making a bibliography fit on one page in Beamer through Quarto</title>
       <link>http://errickson.net/blog/quarto-beamer-bibliography-size.html</link>
+      <guid>http://errickson.net/blog/quarto-beamer-bibliography-size.html</guid>
       <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Making TextEdit start with a Blank Document</title>
       <link>http://errickson.net/blog/textedit-new-document.html</link>
+      <guid>http://errickson.net/blog/textedit-new-document.html</guid>
       <pubDate>Thu, 01 Jun 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Move N= in Stata 18's `dtable`</title>
       <link>http://errickson.net/blog/stata18-dtable-move-samplesize.html</link>
+      <guid>http://errickson.net/blog/stata18-dtable-move-samplesize.html</guid>
       <pubDate>Wed, 31 May 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Category-wise comparisons in Stata 18's `dtable`</title>
       <link>http://errickson.net/blog/stata18-dtable-category-compare.html</link>
+      <guid>http://errickson.net/blog/stata18-dtable-category-compare.html</guid>
       <pubDate>Thu, 04 May 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>R's `sys.call` vs `match.call`</title>
       <link>http://errickson.net/blog/syscall-vs-matchcall.html</link>
+      <guid>http://errickson.net/blog/syscall-vs-matchcall.html</guid>
       <pubDate>Sat, 29 Apr 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>R's `all.equal`, relative vs absolute</title>
       <link>http://errickson.net/blog/all.equal-scale-difference.html</link>
+      <guid>http://errickson.net/blog/all.equal-scale-difference.html</guid>
       <pubDate>Thu, 06 Apr 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Character-wise String Comparison in R</title>
       <link>http://errickson.net/blog/characterwise-string-comparison.html</link>
+      <guid>http://errickson.net/blog/characterwise-string-comparison.html</guid>
       <pubDate>Wed, 29 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>`expect_silent` and Debugging</title>
       <link>http://errickson.net/blog/expect_silent-and-debugging.html</link>
+      <guid>http://errickson.net/blog/expect_silent-and-debugging.html</guid>
       <pubDate>Tue, 28 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>R's `eval` vs `get`</title>
       <link>http://errickson.net/blog/eval-vs-get.html</link>
+      <guid>http://errickson.net/blog/eval-vs-get.html</guid>
       <pubDate>Mon, 27 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>A More Sane `yesno()` for devtools</title>
       <link>http://errickson.net/blog/devtools-better-yesno.html</link>
+      <guid>http://errickson.net/blog/devtools-better-yesno.html</guid>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Disable Slidy Click Advance</title>
       <link>http://errickson.net/blog/disable-slidy-click-advance.html</link>
+      <guid>http://errickson.net/blog/disable-slidy-click-advance.html</guid>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Subsets and subpopulations in complex survey designs</title>
       <link>http://errickson.net/blog/subpop-complex-survey.html</link>
+      <guid>http://errickson.net/blog/subpop-complex-survey.html</guid>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>How to Scroll in Tmux</title>
       <link>http://errickson.net/blog/scrolling-in-tmux.html</link>
+      <guid>http://errickson.net/blog/scrolling-in-tmux.html</guid>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>The Rule of Three</title>
       <link>http://errickson.net/blog/the-rule-of-three.html</link>
+      <guid>http://errickson.net/blog/the-rule-of-three.html</guid>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Exclude files from git commands</title>
       <link>http://errickson.net/blog/git-exclude-files.html</link>
+      <guid>http://errickson.net/blog/git-exclude-files.html</guid>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Color by Significance in R's `forestplot`</title>
       <link>http://errickson.net/blog/forestplot-color-by-significance.html</link>
+      <guid>http://errickson.net/blog/forestplot-color-by-significance.html</guid>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Increase ALL Text Size in ggplot</title>
       <link>http://errickson.net/blog/ggplot-increase-all-text-size.html</link>
+      <guid>http://errickson.net/blog/ggplot-increase-all-text-size.html</guid>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Ignore whitespace on Git diffs</title>
       <link>http://errickson.net/blog/git-ignore-whitespace.html</link>
+      <guid>http://errickson.net/blog/git-ignore-whitespace.html</guid>
       <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 

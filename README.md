@@ -1,3 +1,5 @@
+This repository has moved to https://codeberg.org/josherrickson/blog.
+
 # New posts
 
 1. Create a .html file inside `posts/`. The first line should a `<h1>`, whose
